@@ -37,14 +37,14 @@
             </li>
             </ul>
         </div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
-                我的帳號
+        <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <img src="/DBS_WooChi_Restaurant/logo.png" width="30" height="30" alt="">
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">會員專區</button>
-                <button class="dropdown-item" type="button">聯繫客服</button>
-                <button class="dropdown-item" type="button">登出</button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="/DBS_WooChi_Restaurant/member">會員專區</a>
+                <a class="dropdown-item" href="#">聯繫客服</a>
+                <button type="button" class="btn btn-secondary btn-sm">登出</button>
             </div>
         </div>
     </nav>
