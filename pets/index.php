@@ -49,7 +49,24 @@
         </div>
     </nav>
     
-    
+    <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-link active" id="nav-dog-tab" data-toggle="tab" href="#nav-dog" role="tab" aria-controls="nav-dog" aria-selected="true">Home</a>
+        <a class="nav-link" id="nav-cat-tab" data-toggle="tab" href="#nav-cat" role="tab" aria-controls="nav-cat" aria-selected="false">Profile</a>
+        <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+    </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-dog" role="tabpanel" aria-labelledby="nav-dog-tab">...</div>
+    <div class="tab-pane fade" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">...</div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+    </div>
+
+
+
+
+
+
     <div class="container">
         <div>
             <p>
@@ -69,11 +86,11 @@
                             <div class="card-body">
                                 <h5 class="card-title">PET NAME</h5>
                                 <p class="card-text">
-                                    品種 : <br>
-                                    體型 : <br>
-                                    性別 : <br>
-                                    年齡 : <br>
-                                    個性 : <br>    
+                                    <span>品種 :</span><br>
+                                    <span>體型 :</span><br>
+                                    <span>性別 :</span><br>
+                                    <span>年齡 :</span><br>
+                                    <span>個性 :</span><br>
                                     <small class="text-muted"> 晶片y 結紮y </small>
                                 </p>
                             </div>
@@ -92,11 +109,11 @@
                             <div class="card-body">
                                 <h5 class="card-title">PET NAME</h5>
                                 <p class="card-text">
-                                    品種 : <br>
-                                    體型 : <br>
-                                    性別 : <br>
-                                    年齡 : <br>
-                                    個性 : <br>    
+                                    <span>品種 :</span><br>
+                                    <span>體型 :</span><br>
+                                    <span>性別 :</span><br>
+                                    <span>年齡 :</span><br>
+                                    <span>個性 :</span><br>
                                     <small class="text-muted"> 晶片y 結紮y </small>
                                 </p>
                             </div>

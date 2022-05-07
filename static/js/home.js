@@ -1,36 +1,41 @@
-let restaurant = [
-    {"name":'WooChi', "tel":"11111", "addr":"22222", "openhour":"33333","mail":"44444"},
+let DESCRIPTION = [
+    {"content":'這裡要放餐廳簡介'},
 ]
 
-let description = [
-    {"content":'<br>HELLO<br>HELLOHELLO<br>HELLOHELLOHELLO'},
+let RESTAURANT = [
+    {"name":'WooChi', "tel":"00", "addr":"11", "openhour":"22","mail":"33"},
 ]
 
-let news = [
-    {"content":'aaaaaaaaaa', "date":"2022-05-04"},
-    {"content":'bbbbbbbbbb', "date":"2022-05-05"},
-    {"content":'cccccccccc', "date":"2022-05-06"},
-    {"content":'dddddddddd', "date":"2022-05-07"},
-    {"content":'eeeeeeeeee', "date":"2022-05-08"},
+let NEWS = [
+    {"content":'aaa', "date":"2022-05-04"},
+    {"content":'bbb', "date":"2022-05-05"},
+    {"content":'ccc', "date":"2022-05-06"},
+    {"content":'ddd', "date":"2022-05-07"},
+    {"content":'eee', "date":"2022-05-08"},
 ]
 
 
 function putText() {
-    let base = document.getElementById("restaurant");
-    let rtext = `名字 : ${restaurant[0]["name"]}<br>電話 : ${restaurant[0]["tel"]}<br>
-    地址 : ${restaurant[0]["addr"]}<br>營業時間 : ${restaurant[0]["openhour"]}<br>信箱 : ${restaurant[0]["mail"]}`;
-    base.innerHTML += rtext;
-
+    //餐廳簡介
     let des = document.getElementById("description");
-    let dtext = `簡介 : ${description[0]["content"]}<br>`;
-    des.innerHTML = dtext;
+    des.innerHTML = `${DESCRIPTION[0]["content"]}`;
 
-    let newss = document.getElementById("news");
-    for (let i=0; i<5; i++){
-        let ntext = `<tr><td>${news[i]["content"]}</td><td>${news[i]["date"]}</td></tr>`;
-        newss.innerHTML += ntext;
-    }
+    //餐廳基本資訊
+    let base = document.getElementById("restaurant").getElementsByTagName("span");
+    base[0].textContent += `${RESTAURANT[0]["name"]}`;
+    base[1].textContent += `${RESTAURANT[0]["addr"]}`;
+    base[2].textContent += `${RESTAURANT[0]["tel"]}`;
+    base[3].textContent += `${RESTAURANT[0]["mail"]}`;
+    base[4].textContent += `${RESTAURANT[0]["openhour"]}`;
+
+    //餐廳最新消息
+    let news = document.getElementById("news");
+    for (let i=0; i<NEWS.length; i++){
+        let ntext = `<tr><td>${NEWS[i]["content"]}</td><td>${NEWS[i]["date"]}</td></tr>`;
+        news.innerHTML += ntext;
+    }   
 }
+
 window.onload = function() {
     putText();
 }
