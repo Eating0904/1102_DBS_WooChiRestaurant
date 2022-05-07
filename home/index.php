@@ -31,10 +31,13 @@
                 <a class="nav-link" href="../menu">守則&菜單</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">關於評價</a>
+                <a class="nav-link" href="../pets">店內寵物</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">我要訂位</a>
+                <a class="nav-link" href="../rate">關於評價</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../order">我要訂位</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
