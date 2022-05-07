@@ -1,5 +1,5 @@
 let MEMBER= [
-    {"name":'Eating', "tel":"0123456789","mail":"12345@54321"},
+    {"name":'Eating', "tel":'0123456789',"mail":'12345@54321',"points":'100'},
 ]
 
 let ACCOUNT= [
@@ -8,16 +8,15 @@ let ACCOUNT= [
 
 
 function putText() {
-    let member = document.getElementById("member");
-    let mtext = `名字 : <input type="text" value="${MEMBER[0]["name"]}"><br>
-                 電話 : <input type="text" value="${MEMBER[0]["tel"]}"><br>
-                 信箱 : <input type="text" value="${MEMBER[0]["mail"]}"><br>`
-    member.innerHTML += mtext;
+    let member = document.getElementById("member").getElementsByTagName("span");
+    member[0].textContent += `${MEMBER[0]["name"]}`;
+    member[1].textContent += `${MEMBER[0]["tel"]}`;
+    member[2].textContent += `${MEMBER[0]["mail"]}`;
+    member[3].textContent += `${MEMBER[0]["points"]}`;
 
-    let account = document.getElementById("account");
-    let atext = `帳號 : <input type="text" value="${ACCOUNT[0]["account"]}"><br>
-                 密碼 : <input type="password" value="${ACCOUNT[0]["password"]}"><br>`
-    account.innerHTML += atext;
+    let account = document.getElementById("account").getElementsByTagName("span");
+    account[0].textContent += `${ACCOUNT[0]["account"]}`;
+    account[1].textContent += `${ACCOUNT[0]["password"]}`;
 }
 
 window.onload = function() {
