@@ -25,8 +25,8 @@ function putPets() {
     let dog = document.getElementById("pills-home");
     for(let i=0; i<DOGS.length; i++){
         //照片
-        let img = dog.getElementsByClassName("col-md-5");
-        img[i].innerHTML =  `<img src="${DOGS[i]["path"]}" alt="Image">`;
+        let img = dog.getElementsByTagName("img");
+        img[i].src = `${DOGS[i]["path"]}`;
         //名字
         let petname = dog.getElementsByClassName("card-title");
         petname[i].textContent = `${DOGS[i]["name"]}`;
@@ -47,8 +47,8 @@ function putPets() {
     let cat = document.getElementById("pills-profile");
     for(let i=0; i<CATS.length; i++){
         //照片
-        let img = cat.getElementsByClassName("col-md-5");
-        img[i].innerHTML =  `<img src="${CATS[i]["path"]}" alt="Image">`;
+        let img = cat.getElementsByTagName("img");
+        img[i].src = `${CATS[i]["path"]}`;
         //名字
         let petname = cat.getElementsByClassName("card-title");
         petname[i].textContent = `${CATS[i]["name"]}`;
