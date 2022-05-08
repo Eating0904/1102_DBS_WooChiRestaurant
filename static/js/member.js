@@ -19,6 +19,18 @@ function putText() {
     account[1].textContent += `${ACCOUNT[0]["password"]}`;
 }
 
+function edit() {
+    let member = document.getElementById("editmember").getElementsByTagName("input");
+    member[0].value = `${MEMBER[0]["name"]}`;
+    member[1].value = `${MEMBER[0]["tel"]}`;
+    member[2].value = `${MEMBER[0]["mail"]}`;
+
+    let account = document.getElementById("editaccount").getElementsByTagName("input");
+    account[0].value = `${ACCOUNT[0]["account"]}`;
+    account[1].value = `${ACCOUNT[0]["password"]}`;
+}
+
 window.onload = function() {
     putText();
+    edit();
 }

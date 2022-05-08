@@ -78,30 +78,52 @@
                         <span>會員點數 : </span><br>
                     </div>
                     <!-- 當按下編輯按鈕 -->
-                    <form>
-                        <div class="form-group col-md-3">
-                            <label for="exampleInputEmail1">姓名 : </label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="editmember">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">姓名</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
                         </div>
-                        <div class="form-group col-md-3">
-                            <label for="exampleInputEmail1">連絡電話 : </label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">連絡電話</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
                         </div>
-                        <div class="form-group col-md-3">
-                            <label for="exampleInputEmail1">聯絡信箱 : </label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">連絡信箱</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
                         </div>
-                        <button type="submit" class="btn btn-primary">儲存變更</button>
-                    </form>
-                    
+                        <button type="button" class="btn btn-primary btn-sm">儲存變更</button>
+                    </div>
                 </div>
                 <!-- 帳號設定 -->
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                     <h4>帳號設定</h4>
-                        <div id="account">
-                            <span>帳號 : </span><br>
-                            <span>密碼 : </span><br>
+                    <div id="account">
+                        <span>帳號 : </span><br>
+                        <span>密碼 : </span><br>
+                        <button type="button" class="btn btn-primary btn-sm">編輯</button>
+                    </div>
+                    <!-- 當按下編輯按鈕 -->
+                    <div id="editaccount">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">帳號</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
                         </div>
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">密碼</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm">儲存變更</button>
+                    </div>
                 </div>
                 <!-- 訂單紀錄 -->
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
