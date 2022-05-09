@@ -20,37 +20,53 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/DBS_WooChi_Restaurant/home">
-            <img src="/DBS_WooChi_Restaurant/logo.png" width="30" height="30" alt="">
+        <a class="navbar-brand" href="../home">
+            <img src="../logo.png" width="30" height="30" alt="Image">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/DBS_WooChi_Restaurant/menu">菜單&守則</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/DBS_WooChi_Restaurant/pets">店內寵物</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/DBS_WooChi_Restaurant/rate">評價</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/DBS_WooChi_Restaurant/order">訂位</a>
-            </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../home">首頁 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../menu">守則&菜單</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pets">店內寵物</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../rate">關於評價</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../order">我要訂位</a>
+                </li>
+                <!-- if顧客未登入 -->
+                <li class="nav-item">
+                    <a class="nav-link" href="../register">
+                        <button class="btn btn-primary btn-sm" type="submit" >加入會員</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login">
+                        <button class="btn btn-primary btn-sm" type="submit" >登入</button>
+                    </a>
+                </li>
+                <!-- if顧客已登入 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                        會員專區
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="../member">會員帳號</a>
+                        <a class="dropdown-item" href="../membercontact">聯繫客服</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="btn btn-primary btn-sm" type="submit">登出</button>
+                    </div>
+                </li>
             </ul>
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
-                我的帳號
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">會員專區</button>
-                <button class="dropdown-item" type="button">聯繫客服</button>
-                <button class="dropdown-item" type="button">登出</button>
-            </div>
         </div>
     </nav>
 

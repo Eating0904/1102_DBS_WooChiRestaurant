@@ -29,33 +29,44 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="../home">首頁 <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../menu">守則&菜單</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../pets">店內寵物</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../rate">關於評價</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../order">我要訂位</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
-                    會員帳號
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">基本資料</a>
-                    <a class="dropdown-item" href="#">帳號設定</a>
-                    <a class="dropdown-item" href="#">聯繫客服</a>
-                    <div class="dropdown-divider"></div>
-                    <button class="btn btn-primary" type="submit">登出</button>
-                </div>
-            </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../home">首頁 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../menu">守則&菜單</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pets">店內寵物</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../rate">關於評價</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../order">我要訂位</a>
+                </li>
+                <!-- if顧客未登入 -->
+                <li class="nav-item">
+                    <a class="nav-link" href="../register">
+                        <button class="btn btn-primary btn-sm" type="submit" >加入會員</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login">
+                        <button class="btn btn-primary btn-sm" type="submit" >登入</button>
+                    </a>
+                </li>
+                <!-- if顧客已登入 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                        會員專區
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="../member">會員帳號</a>
+                        <a class="dropdown-item" href="../membercontact">聯繫客服</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="btn btn-primary btn-sm" type="submit">登出</button>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>

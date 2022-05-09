@@ -11,6 +11,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <div>
+            <h3>歡迎加入WooChi餐廳會員</h3>
+        </div>
+        <form>
+            <div class="form-group">
+                <h5>帳號密碼</h5>
+                帳號 : <input type="text" class="form-control" placeholder="請輸入帳號">
+                密碼 : <input type="password" class="form-control" placeholder="請輸入密碼">
+            </div>
+            <hr>
+            <div class="form-group">
+                <h5>基本資料</h5>
+                姓名 : <input type="text" class="form-control" placeholder="請輸入姓名">
+                聯絡電話 : <input type="text" class="form-control" placeholder="請輸入聯絡電話">
+                聯絡信箱 : <input type="text" class="form-control" placeholder="請輸入聯絡信箱">
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">加入</button>
+        </form>
+        <div>
+            已經是會員了嗎?
+            <a href="../login">立即登入</a>
+        </div>
+    </div>
 </body>
 </html>

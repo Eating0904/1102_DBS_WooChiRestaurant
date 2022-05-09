@@ -11,6 +11,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <div>
+            <h3>登入</h3>
+        </div>
+        <form>
+            <div class="form-group">
+                <h5>帳號</h5>
+                <input type="text" class="form-control" placeholder="請輸入帳號">
+            </div>
+            <div class="form-group">
+                <h5>密碼</h5>
+                <input type="password" class="form-control" placeholder="請輸入密碼">
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">登入</button>
+        </form>
+        <div>
+            還沒加入會員嗎?
+            <a href="../register">立即加入</a>
+        </div>
+    </div>
 </body>
 </html>
