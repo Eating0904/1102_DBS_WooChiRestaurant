@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order</title>
-
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
@@ -17,10 +17,15 @@
     <!-- <script src="/DBS_WooChi_Restaurant/static/js/home.js"></script> -->
     <script src="../static/js/base.js"></script>
 
+    <!-- test new clock selector-->
+
+    <link href="bootstrap-datetimepicker.min.css" rel="external nofollow" rel="stylesheet" />
+<script src="bootstrap-datetimepicker.js"></script>
+<script src="bootstrap-datetimepicker.zh-CN.js"></script>
+
 </head>
 
 <body>
-    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../home">
             <img src="../logo.png" width="30" height="30" alt="Image">
@@ -73,67 +78,119 @@
     </nav>
 
     <div class="container">
-        <div>
-            <h5>聯絡資料</h5>
+        <form action="">
+            <h4>聯絡資料</h4>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
                     同會員資料
                 </label>
             </div>
-            <div class="form-group col-md-4">
-                <label for="">姓名</label>
-                <input class="form-control form-control-sm" type="text" placeholder="請輸入姓名">
-                <label for="">連絡電話</label>
-                <input class="form-control form-control-sm" type="text" placeholder="請輸入聯絡電話">
-                <label for="">連絡信箱</label>
-                <input class="form-control form-control-sm" type="text" placeholder="請輸入聯絡信箱">
+            <div>
+                名字 : <input type="text"><br>
+                電話 : <input type="text"><br>
+                信箱 : <input type="text"><br>
             </div>
-        </div>
+        </form>
+
         <hr>
-        <div>
-            <h5>訂位資訊</h5>
-            <div class="form-group col-md-3">
-                <label for="start_date">日期</label>
-                <input type="text" class="form-control datepicker " id="start_date" name="start_date" placeholder=" YYYY-MM-DD">
-            </div>
-            <div class="form-group col-md-3">
-                <label for="inputState">時間</label>
-                <select id="inputState" class="form-control">
-                    <option selected>請選擇時間...</option>
-                    <option>10:00</option>
-                    <option>11:00</option>
-                    <option>12:00</option>
-                    <option>13:00</option>
-                    <option>14:00</option>
-                    <option>15:00</option>
-                    <option>16:00</option>
-                    <option>17:00</option>
-                    <option>18:00</option>   
-                </select>    
-            </div>
-            <div class="form-group col-md-3">
-                <label for="">用餐人數</label>
-                <input class="form-control" type="text" placeholder="請輸入用餐人數">
-            </div>
-            <div class="form-group col-md-3">
-                <label for="">選擇區域</label>
-                <span>(還沒處理)</span>
-                <button class="btn btn-primary btn-sm" type="submit">選擇</button>
-            </div>
-            <div class="form-group col-md-3">
-                <label for="">領養意願 : </label>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1"> Y </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2"> N </label>
-                </div>
-            </div>
 
+        <form action="">
+            <h4>訂位資訊</h4>
+            <div class="form-group">
+                <div class="row">
+                    日期 : &emsp;
+                    <select class="col-mx-2">
+                        <option value="1">2020</option>
+                        <option value="2">2021</option>    
+                        <option selected>2022</option>
+                        <option value="3">2023</option>
+                        <option value="4">2024</option>
+                    </select>
+                    &thinsp;年&emsp;
+                    <select class="col-mx-1">
+                        <option selected>1</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                        <option value="4">5</option>
+                        <option value="5">6</option>
+                        <option value="6">7</option>
+                        <option value="7">8</option>
+                        <option value="8">9</option>
+                        <option value="9">10</option>
+                        <option value="10">11</option>
+                        <option value="11">12</option>
+                    </select>
+                    &thinsp;月&emsp;
+                    <select class="col-mx-1">
+                        <option selected>1</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                    </select>
+                    &thinsp;日&emsp;
+                </div>
+                <div class="row">
+                    時間 : &emsp;
+                    <select class="col-mx-1">
+                        <option selected>1</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                    </select>
+                    &thinsp;時&emsp;
+                </div>   
+            </div>
+            <!-- date picker -->
+            <input type="text" class="form-control datepicker " id="start_date" name="start_date" placeholder="YYYY-MM-DD">
 
+        </form>
     </div>
+
+
+    <button type="button" onclick="showWindow()">show</button>
+    <div class="cover" onclick="closeWindow()"></div>
+    <div class="window">
+        <h3>small window</h3>
+        <p>this is a small window</p>
+        <button type="button" onclick="closeWindow()">close</button>
+    </div>
+    <style>
+        html, body{
+            height: 100%;
+        }
+        .window{
+            border: solid 1px #000;
+            background-color: #fff;
+            /* 置中 */
+            position: absolute;
+            width: 30%;
+            top: 200px;
+            left: 35%;
+
+            /* 顯示 */
+            display: none;
+        }
+        .cover{
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            display: none;
+        }
+    </style>
+    <script>
+        function showWindow() {
+            document.getElementsByClassName("cover")[0].style.display = "block";
+            document.getElementsByClassName("window")[0].style.display = "block";
+        }
+        function closeWindow() {
+            document.getElementsByClassName("cover")[0].style.display = "none";
+            document.getElementsByClassName("window")[0].style.display = "none";
+        }
+    </script>
 </body>
 </html>

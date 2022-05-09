@@ -22,7 +22,26 @@ function putText() {
     // }
 
 }
+function showRateBox() {
+    // document.getElementsByClassName("cover")[0].style.display = "block";
+    document.getElementsByClassName("hide")[0].style.display = "block";
+}
+function closeRateBox() {
+    // document.getElementsByClassName("cover")[0].style.display = "none";
+    document.getElementsByClassName("hide")[0].style.display = "none";
+}
+
+function showReplyBox() {
+    // document.getElementsByClassName("cover")[0].style.display = "block";
+    document.getElementsByClassName("hide")[1].style.display = "block";
+}
+function closeReplyBox() {
+    // document.getElementsByClassName("cover")[0].style.display = "none";
+    document.getElementsByClassName("hide")[1].style.display = "none";
+}
+
 
 window.onload = function() {
     putText();
+
 }
