@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets</title>
 
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="../static/js/pets.js"></script>
+    <link rel="stylesheet" href="../static/css/pets.css">
 </head>
 
 <body>
@@ -84,7 +88,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -107,55 +111,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body">
-                                        <h5 class="card-title"></h5>
-                                        <p class="card-text">
-                                            <span>品種 : </span><br>
-                                            <span>體型 : </span><br>
-                                            <span>性別 : </span><br>
-                                            <span>年齡 : </span><br>
-                                            <span>個性 : </span><br>
-                                            <span><small class="text-muted"> 晶片 </small></span>
-                                            <span><small class="text-muted"> 結紮 </small></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-5">
-                                    <img src="..." alt="Image">
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body">
-                                        <h5 class="card-title"></h5>
-                                        <p class="card-text">
-                                            <span>品種 : </span><br>
-                                            <span>體型 : </span><br>
-                                            <span>性別 : </span><br>
-                                            <span>年齡 : </span><br>
-                                            <span>個性 : </span><br>
-                                            <span><small class="text-muted"> 晶片 </small></span>
-                                            <span><small class="text-muted"> 結紮 </small></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -180,7 +136,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -203,7 +159,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -228,7 +184,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -251,7 +207,55 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title"></h5>
+                                        <p class="card-text">
+                                            <span>品種 : </span><br>
+                                            <span>體型 : </span><br>
+                                            <span>性別 : </span><br>
+                                            <span>年齡 : </span><br>
+                                            <span>個性 : </span><br>
+                                            <span><small class="text-muted"> 晶片 </small></span>
+                                            <span><small class="text-muted"> 結紮 </small></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-5">
+                                    <img src="..." alt="Image" class="petsImage">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title"></h5>
+                                        <p class="card-text">
+                                            <span>品種 : </span><br>
+                                            <span>體型 : </span><br>
+                                            <span>性別 : </span><br>
+                                            <span>年齡 : </span><br>
+                                            <span>個性 : </span><br>
+                                            <span><small class="text-muted"> 晶片 </small></span>
+                                            <span><small class="text-muted"> 結紮 </small></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-5">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -280,7 +284,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -303,55 +307,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body">
-                                        <h5 class="card-title"></h5>
-                                        <p class="card-text">
-                                            <span>品種 : </span><br>
-                                            <span>體型 : </span><br>
-                                            <span>性別 : </span><br>
-                                            <span>年齡 : </span><br>
-                                            <span>個性 : </span><br>
-                                            <span><small class="text-muted"> 晶片 </small></span>
-                                            <span><small class="text-muted"> 結紮 </small></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-5">
-                                    <img src="..." alt="Image">
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body">
-                                        <h5 class="card-title"></h5>
-                                        <p class="card-text">
-                                            <span>品種 : </span><br>
-                                            <span>體型 : </span><br>
-                                            <span>性別 : </span><br>
-                                            <span>年齡 : </span><br>
-                                            <span>個性 : </span><br>
-                                            <span><small class="text-muted"> 晶片 </small></span>
-                                            <span><small class="text-muted"> 結紮 </small></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -376,7 +332,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -399,7 +355,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -424,7 +380,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
@@ -447,7 +403,55 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-5">
-                                    <img src="..." alt="Image">
+                                    <img src="..." alt="Image" class="petsImage">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title"></h5>
+                                        <p class="card-text">
+                                            <span>品種 : </span><br>
+                                            <span>體型 : </span><br>
+                                            <span>性別 : </span><br>
+                                            <span>年齡 : </span><br>
+                                            <span>個性 : </span><br>
+                                            <span><small class="text-muted"> 晶片 </small></span>
+                                            <span><small class="text-muted"> 結紮 </small></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-5">
+                                    <img src="..." alt="Image" class="petsImage">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title"></h5>
+                                        <p class="card-text">
+                                            <span>品種 : </span><br>
+                                            <span>體型 : </span><br>
+                                            <span>性別 : </span><br>
+                                            <span>年齡 : </span><br>
+                                            <span>個性 : </span><br>
+                                            <span><small class="text-muted"> 晶片 </small></span>
+                                            <span><small class="text-muted"> 結紮 </small></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-5">
+                                    <img src="..." alt="Image" class="petsImage">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">

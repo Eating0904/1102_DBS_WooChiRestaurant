@@ -31,13 +31,15 @@ class show {
         }
        return $array ;
     }
-    static function pets($u_id,$array) {
-        $sql = "  SELECT p_Name, photo, gender, age, size, variety, p_description, microchip, ligation FROM pets WHERE  u_id= '$u_id'; "; 
+    static function pets($u_id, $array) {
+        $array = ["cats"=>[], "dogs"=>[]];
+        $sql = "  SELECT * FROM pets WHERE  u_id= '$u_id'; "; 
         $result =  database::$conn->query($sql);
 
         while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
+            $type = $row["type"]=="狗" ? "dogs" : "cats";
             $temp=[
-                "name" => $row["p_Name"],
+                "name" => $row["p_name"],
                 "photo" => $row["photo"],
                 "gender" => $row["gender"],
                 "age" => $row["age"],
@@ -47,7 +49,7 @@ class show {
                 "microchip" => $row["microchip"],
                 "ligation" => $row["ligation"]
             ];
-            array_push($array,$temp); 
+            array_push($array[$type], $temp); 
         }
        return $array ;
     }

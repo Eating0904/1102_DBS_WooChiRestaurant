@@ -1,0 +1,15 @@
+.petsImage{
+    height: 90%;
+    width: 95%;
+    position: relative;
+    top: 10.5px;
+    left: 10.5px;
+    
+}
+.row .no-gutters{
+    height: 250px;
+    background-color: rgba(130, 192, 192, 0.3);
+}
+.card-title{
+    font-weight:bold;
+}
