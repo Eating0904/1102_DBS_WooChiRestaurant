@@ -20,6 +20,7 @@ let CATS = [
     {"path":'../logo3.png', "name":'h', "variety":'h1', "size":'h2', "gender":'h3', "age":'h4', "description":'h5', "晶片":'N', "結紮":'N'},
 ]
 
+
 function putPets() {
     //寵物資料 - 狗狗
     let dog = document.getElementById("pills-home");
@@ -69,4 +70,5 @@ function putPets() {
 
 window.onload = function() {
     putPets();
+
 }
