@@ -22,49 +22,61 @@ let CATS = [
 
 
 function putPets() {
-    //寵物資料 - 狗狗
-    let dog = document.getElementById("pills-home");
-    for(let i=0; i<DOGS.length; i++){
-        //照片
-        let img = dog.getElementsByTagName("img");
-        img[i].src = `${DOGS[i]["path"]}`;
-        //名字
-        let petname = dog.getElementsByClassName("card-title");
-        petname[i].textContent = `${DOGS[i]["name"]}`;
-        //細節
-        let pets = dog.getElementsByClassName("card-text")[i].getElementsByTagName("span");
-        pets[0].textContent += `${DOGS[i]["variety"]}`;
-        pets[1].textContent += `${DOGS[i]["size"]}`;
-        pets[2].textContent += `${DOGS[i]["gender"]}`;
-        pets[3].textContent += `${DOGS[i]["age"]}`;
-        pets[4].textContent += `${DOGS[i]["description"]}`;
-
-        let petss = dog.getElementsByClassName("card-text")[i].getElementsByTagName("small");
-        petss[0].textContent += `${DOGS[i]["晶片"]}`;
-        petss[1].textContent += `${DOGS[i]["結紮"]}`;
-    }
-
-    //寵物資料 - 貓貓
-    let cat = document.getElementById("pills-profile");
-    for(let i=0; i<CATS.length; i++){
-        //照片
-        let img = cat.getElementsByTagName("img");
-        img[i].src = `${CATS[i]["path"]}`;
-        //名字
-        let petname = cat.getElementsByClassName("card-title");
-        petname[i].textContent = `${CATS[i]["name"]}`;
-        //細節
-        let pets = cat.getElementsByClassName("card-text")[i].getElementsByTagName("span");
-        pets[0].textContent += `${CATS[i]["variety"]}`;
-        pets[1].textContent += `${CATS[i]["size"]}`;
-        pets[2].textContent += `${CATS[i]["gender"]}`;
-        pets[3].textContent += `${CATS[i]["age"]}`;
-        pets[4].textContent += `${CATS[i]["description"]}`;
-
-        let petss = cat.getElementsByClassName("card-text")[i].getElementsByTagName("small");
-        petss[0].textContent += `${CATS[i]["晶片"]}`;
-        petss[1].textContent += `${CATS[i]["結紮"]}`;
-    }
+    $.post(
+        "../php/pets.php",
+        "",
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    let DOGS = response["data"]["dog"];
+                    let CATS = response["data"]["cat"];
+                    //寵物資料 - 狗狗
+                    let dog = document.getElementById("pills-home");
+                    for(let i=0; i<DOGS.length; i++){
+                        //照片
+                        let img = dog.getElementsByTagName("img");
+                        img[i].src = `${DOGS[i]["path"]}`;
+                        //名字
+                        let petname = dog.getElementsByClassName("card-title");
+                        petname[i].textContent = `${DOGS[i]["name"]}`;
+                        //細節
+                        let pets = dog.getElementsByClassName("card-text")[i].getElementsByTagName("span");
+                        pets[0].textContent += `${DOGS[i]["variety"]}`;
+                        pets[1].textContent += `${DOGS[i]["size"]}`;
+                        pets[2].textContent += `${DOGS[i]["gender"]}`;
+                        pets[3].textContent += `${DOGS[i]["age"]}`;
+                        pets[4].textContent += `${DOGS[i]["description"]}`;
+                
+                        let petss = dog.getElementsByClassName("card-text")[i].getElementsByTagName("small");
+                        petss[0].textContent += `${DOGS[i]["晶片"]}`;
+                        petss[1].textContent += `${DOGS[i]["結紮"]}`;
+                    }
+                
+                    //寵物資料 - 貓貓
+                    let cat = document.getElementById("pills-profile");
+                    for(let i=0; i<CATS.length; i++){
+                        //照片
+                        let img = cat.getElementsByTagName("img");
+                        img[i].src = `${CATS[i]["path"]}`;
+                        //名字
+                        let petname = cat.getElementsByClassName("card-title");
+                        petname[i].textContent = `${CATS[i]["name"]}`;
+                        //細節
+                        let pets = cat.getElementsByClassName("card-text")[i].getElementsByTagName("span");
+                        pets[0].textContent += `${CATS[i]["variety"]}`;
+                        pets[1].textContent += `${CATS[i]["size"]}`;
+                        pets[2].textContent += `${CATS[i]["gender"]}`;
+                        pets[3].textContent += `${CATS[i]["age"]}`;
+                        pets[4].textContent += `${CATS[i]["description"]}`;
+                
+                        let petss = cat.getElementsByClassName("card-text")[i].getElementsByTagName("small");
+                        petss[0].textContent += `${CATS[i]["晶片"]}`;
+                        petss[1].textContent += `${CATS[i]["結紮"]}`;
+                    }
+                }
+            }
+        }
+    )
 
 }
 
