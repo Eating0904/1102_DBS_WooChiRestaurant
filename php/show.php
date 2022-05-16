@@ -54,11 +54,9 @@ class show {
        return $array ;
     }
     static function menu($array) {
-        for($i=1; $i<=3 ;$i++){
-            $sql = " SELECT image FROM images WHERE  i_id= '$i'; "; 
-            $result =  database::$conn->query($sql);
-            $row =  $result->fetch_array(MYSQLI_ASSOC);
-
+        $sql = " SELECT image FROM images ORDER BY i_id"; 
+        $result =  database::$conn->query($sql);
+        while($row =  $result->fetch_array(MYSQLI_ASSOC)) {
             $temp=[
                 "image" => $row["image"]
             ];
