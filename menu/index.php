@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="../static/js/menu.js"></script>
-    <link rel="stylesheet" href="../static/css/menu.css">
+    <!-- <link rel="stylesheet" href="../static/css/menu.css"> -->
 </head>
 
 <body>
@@ -72,8 +72,8 @@
 
 
 
-    <div class="container">
-        <h3>餐廳守則 & 菜單</h3>
+    <div class="container center">
+        <h4>餐廳守則 & 菜單</h4>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

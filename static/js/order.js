@@ -1,3 +1,7 @@
+// if checked
+// 要資料改input的value
+
+
 function order() {
     let url = "../php/order.php";
     let data = {
@@ -16,7 +20,7 @@ function order() {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
-                    fun___(response["data"])
+                    // fun___(response["data"])
                 }
             }
         }
