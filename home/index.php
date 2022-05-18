@@ -1,3 +1,9 @@
+<?php
+
+require("../php/User.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <script src="../static/js/home.js"></script>
 </head>
@@ -36,14 +46,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../rate">關於評價</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../order">我要訂位</a>
-                </li>
                 <!-- if已登入 -->
-                <?php if(!empty($_COOKIE) && !empty($_COOKIE["uid"])): ?>
-                <?php if(User::check()): ?>
+                <?php if(!empty($_COOKIE) && !empty($_COOKIE["id"])): ?>
+                    <?php if(User::check()): ?>
                         <!-- if是會員 -->
-                        <?php if($_COOKIE["uid"] !== 1): ?>
+                        <?php if($_COOKIE["id"] !== "1"): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../order">我要訂位</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                                     會員專區
@@ -52,7 +62,7 @@
                                     <a class="dropdown-item" href="../member">會員帳號</a>
                                     <a class="dropdown-item" href="../membercontact">聯繫客服</a>
                                     <div class="dropdown-divider"></div>
-                                    <button class="btn btn-primary btn-sm" type="submit">登出</button>
+                                    <a href="../php/logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
                                 </div>
                             </li>
                         <!-- if是商家 -->
@@ -62,10 +72,10 @@
                                     後台管理
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="../member">會員帳號</a>
-                                    <a class="dropdown-item" href="../membercontact">聯繫客服</a>
+                                    <a class="dropdown-item" href="../search">查尋會員&訂單</a>
+                                    <a class="dropdown-item" href="../restaurantcontact">回覆客服</a>
                                     <div class="dropdown-divider"></div>
-                                    <button class="btn btn-primary btn-sm" type="submit">登出</button>
+                                    <a href="../php/logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
                                 </div>
                             </li>
                         <?php endif; ?>

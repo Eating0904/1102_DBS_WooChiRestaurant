@@ -1,3 +1,9 @@
+<?php
+
+require("../php/User.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,9 +45,9 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../home">
             <img src="../logo.png" width="30" height="30" alt="Image">
+            WooChi
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -58,33 +64,53 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../rate">關於評價</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../order">我要訂位</a>
-                </li>
-                <!-- if顧客未登入 -->
-                <li class="nav-item">
-                    <a class="nav-link" href="../register">
-                        <button class="btn btn-primary btn-sm" type="submit">加入會員</button>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../login">
-                        <button class="btn btn-primary btn-sm" type="submit">登入</button>
-                    </a>
-                </li>
-                <!-- if顧客已登入 -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-expanded="false">
-                        會員專區
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../member">會員帳號</a>
-                        <a class="dropdown-item" href="../membercontact">聯繫客服</a>
-                        <div class="dropdown-divider"></div>
-                        <button class="btn btn-primary btn-sm" type="submit">登出</button>
-                    </div>
-                </li>
+                <!-- if已登入 -->
+                <?php if(!empty($_COOKIE) && !empty($_COOKIE["id"])): ?>
+                    <?php if(User::check()): ?>
+                        <!-- if是會員 -->
+                        <?php if($_COOKIE["id"] !== "1"): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../order">我要訂位</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                                    會員專區
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="../member">會員帳號</a>
+                                    <a class="dropdown-item" href="../membercontact">聯繫客服</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="../php/logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
+                                </div>
+                            </li>
+                        <!-- if是商家 -->
+                        <?php else: ?>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                                    後台管理
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="../search">查尋會員&訂單</a>
+                                    <a class="dropdown-item" href="../restaurantcontact">回覆客服</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="../php/logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
+                                </div>
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <!-- if未登入 -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="../register">
+                            <button class="btn btn-primary btn-sm" type="submit" >加入會員</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../login">
+                            <button class="btn btn-primary btn-sm" type="submit" >登入</button>
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>

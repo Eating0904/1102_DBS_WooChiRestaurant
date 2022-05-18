@@ -36,7 +36,7 @@
                 <h5>密碼</h5>
                 <input type="password" class="form-control" placeholder="請輸入密碼" name="password">
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">登入</button>
+            <button type="button" id="submit" class="btn btn-primary btn-sm">登入</button>
         </form>
         <div>
             還沒加入會員嗎?

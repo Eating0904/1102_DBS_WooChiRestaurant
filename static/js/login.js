@@ -11,7 +11,10 @@ function login() {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
-                    
+                    window.location.href = "../home";
+                }
+                else {
+                    console.log(response["error"]);
                 }
             }
         }

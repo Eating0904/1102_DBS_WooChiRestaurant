@@ -42,7 +42,7 @@
                 聯絡電話 : <input type="text" class="form-control" placeholder="請輸入聯絡電話" name="tel">
                 聯絡信箱 : <input type="text" class="form-control" placeholder="請輸入聯絡信箱" name="mail">
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">加入</button>
+            <button type="button" id="submit" class="btn btn-primary btn-sm">加入</button>
         </form>
         <div>
             已經是會員了嗎?

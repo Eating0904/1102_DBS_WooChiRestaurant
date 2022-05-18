@@ -7,22 +7,25 @@ function register() {
         "tel" : $("input[name='tel']").val(),
         "mail" : $("input[name='mail']").val(),
     };
-
     $.post(
         url,
         data,
-        // (response, status) => {
-        //     if (status == "success") {
-        //         if (response["status"] == "success") {
-        //             response["data"]
-        //         }
-        //     }
-        // }
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    window.location.href = "../login";
+                }
+                else {
+                    console.log(response["error"]);
+                }
+            }
+        }
     )
 }
 
 $(document).ready(() => {
     $("#submit").click(() => {
+        console.log("click");
         register();
     })
 });
