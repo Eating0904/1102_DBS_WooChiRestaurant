@@ -1,24 +1,22 @@
 <?php
-    $u_id=1;
     require("show.php");
     $response = [
         "status" => "fail",
     ];
-
+    $u_id=1;
     $array = [] ;
-    $row=show::news($u_id,$array);
-
+    $row = show::pets($u_id,$array);
     //print_r($row);
+
     if( $row ) {
         $response["status"] = "success";
         $response["data"] = $row ;
     }
     else {
-        $response["error"] = "cannt find news";
+        $response["error"] = "查無寵物資訊";
     }
-    
+   
     header('Content-Type: application/json; charset=utf-8');
-    echo json_encode($response, JSON_UNESCAPED_UNICODE);
-    //print_r($row);
-?>
+    echo json_encode($response,JSON_UNESCAPED_UNICODE);
 
+?>
