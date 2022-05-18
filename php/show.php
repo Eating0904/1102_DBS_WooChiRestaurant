@@ -76,11 +76,37 @@ class show {
         }
         return $array ;
     }
-    static function rate($u_id) {
+    static function rate($array) {
+        $sql = " SELECT u_id,score,r_date,r_content FROM rate; ";
+        $result =  database::$conn->query($sql);
        
+        while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
+            $temp=[
+                "u_id" => $row["u_id"],
+                "score" => $row["score"],
+                "date" => $row["r_date"],
+                "content" => $row["r_content"]
+            ];
+            array_push($array,$temp); 
+        }
+       return $array ;
     }
-    static function order($u_id) {
+    static function order($u_id,$array) {
+        $sql = " SELECT meal_time,num_of_people,seat,adoption,points,note FROM orders WHERE u_id='$u_id';";
+        $result =  database::$conn->query($sql);
        
+        while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
+            $temp=[
+                "meal_time" => $row["meal_time"],
+                "num_of_people" => $row["num_of_people"],
+                "seat" => $row["seat"],
+                "adoption" => $row["adoption"],
+                "points" => $row["points"],
+                "note" => $row["note"]
+            ];
+            array_push($array,$temp); 
+        }
+       return $array ;
     }
 }
 
