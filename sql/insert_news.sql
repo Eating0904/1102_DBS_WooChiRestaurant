@@ -1,3 +1,5 @@
+select * from news order by release_date DESC;
+
 INSERT INTO news(n_id,u_id, n_information, release_date)
 VALUES (1,1,'2021/12/20～12/26推出聖誕節特別套餐','2021-12-06');
 INSERT INTO news(u_id, n_information, release_date)
