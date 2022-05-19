@@ -80,7 +80,7 @@ require("../php/User.php");
                                     <a class="dropdown-item" href="../member">會員帳號</a>
                                     <a class="dropdown-item" href="../membercontact">聯繫客服</a>
                                     <div class="dropdown-divider"></div>
-                                    <a href="../php/logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
+                                    <a href="../php/user_logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
                                 </div>
                             </li>
                         <!-- if是商家 -->
@@ -93,7 +93,7 @@ require("../php/User.php");
                                     <a class="dropdown-item" href="../search">查尋會員&訂單</a>
                                     <a class="dropdown-item" href="../restaurantcontact">回覆客服</a>
                                     <div class="dropdown-divider"></div>
-                                    <a href="../php/logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
+                                    <a href="../php/user_logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
                                 </div>
                             </li>
                         <?php endif; ?>

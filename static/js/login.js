@@ -1,5 +1,5 @@
 function login() {
-    let url = "../php/login.php";
+    let url = "../php/user_login.php";
     let data = {
         "account" : $("input[name='account']").val(),
         "password" : $("input[name='password']").val(),

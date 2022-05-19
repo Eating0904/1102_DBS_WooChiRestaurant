@@ -1,30 +1,66 @@
 let RATE = [
-    {"name":'Eating1',"star":'1',"content":'AAA'},
-    {"name":'Eating2',"star":'2',"content":'BBB'},
-    {"name":'Eating3',"star":'3',"content":'CCC'},
-    {"name":'Eating4',"star":'4',"content":'DDD'},
-    {"name":'Eating5',"star":'5',"content":'EEE'},
+    {"name":'Eating1',"star":'1',"content":'AAA',"reply":'ㄅㄅㄅ'},
+    {"name":'Eating2',"star":'2',"content":'BBB',"reply":'ㄆㄆㄆ'},
+    {"name":'Eating3',"star":'3',"content":'CCC',"reply":'ㄇㄇㄇ'},
+    {"name":'Eating4',"star":'4',"content":'DDD',"reply":'ㄉㄉㄉ'},
+    {"name":'Eating5',"star":'5',"content":'EEE',"reply":'ㄌㄌㄌ'},
 ]
 
 function putText() {
-    let ratename = document.getElementsByClassName("card w-75")
-    let ratecontent = document.getElementsByName("ratecontent")
-    for (let i=0; i<RATE.length; i++){
-        ratename[2*i].getElementsByTagName("h5")[0].textContent = `${RATE[i]["name"]}`;
-        ratecontent[i].textContent =  `${RATE[i]["content"]}`;
+    let star = document.getElementById("rateContent")
+    for(let i=0; i<RATE.length;i++){
+        let content = `<div class="card w-75">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <h5 class="card-title">${RATE[i]["name"]}</h5>
+                                    </div>
+                                    <div class="col-9">
+                                        <div id="stars">
+                                            <form action="">
+                                                <input class="star star-5" id="star-5-${i}" type="radio" name="star" value="5">
+                                                <label class="star star-5" for="star-5-${i}"></label>
+                                                <input class="star star-4" id="star-4-${i}" type="radio" name="star" value="4">
+                                                <label class="star star-4" for="star-4-${i}"></label>
+                                                <input class="star star-3" id="star-3-${i}" type="radio" name="star" value="3">
+                                                <label class="star star-3" for="star-3-${i}"></label>
+                                                <input class="star star-2" id="star-2-${i}" type="radio" name="star" value="2">
+                                                <label class="star star-2" for="star-2-${i}"></label>
+                                                <input class="star star-1" id="star-1-${i}" type="radio" name="star" value="1">
+                                                <label class="star star-1" for="star-1-${i}"></label>
+                                            </form>
+                                        </div>
+                                    </div>    
+                                </div>
+                                <hr>
+                                <p class="card-text" name="ratecontent">${RATE[i]["content"]}</p>
+                                <p class="card-text" name="ratecontent">WooChi : ${RATE[i]["reply"]}</p>
+                                <!-- 店家才有 -->
+                                <button type="button" class="btn btn-primary btn-sm" onclick="showReplyBox()">回覆</button>
+                                <!-- 點了回覆之後 -->
+                                <div class="hide" id="hide">
+                                    <div class="card w-75">
+                                        <div class="card-body">
+                                            <h5 class="card-title" >給予回覆</h5>
+                                            <p class="card-text">
+                                                <textarea class="text" placeholder="輸入回覆內容!"></textarea>   
+                                            </p>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="closeReplyBox()">取消</button>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="closeReplyBox()">發送</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+        star.innerHTML += content;
+        $(`input[name="star"][id="star-${RATE[i]["star"]}-${i}"`).prop("checked", true)
+        console.log(`input[name="star"][id="star-${RATE[i]["star"]}-${i}"]`)
     }
 
-    //星星 (還沒好)
-    let star = document.getElementsByClassName("col-9")
-    // if (`${RATE[0]["star"]}`== '1'){
-        star[0].getElementsByTagName("svg")[0].class = `bi bi-star-fill`;
-        star[0].getElementsByTagName("path")[0].d = `M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z`;
-    // }
-
 }
-function showRateBox() {
+function showRateBox(id) {
     // document.getElementsByClassName("cover")[0].style.display = "block";
-    document.getElementsByClassName("hide")[0].style.display = "block";
+    document.getElementsByClassName(`hide-${id}`)[0].style.display = "block";
 }
 function closeRateBox() {
     // document.getElementsByClassName("cover")[0].style.display = "none";
@@ -33,7 +69,7 @@ function closeRateBox() {
 
 function showReplyBox() {
     // document.getElementsByClassName("cover")[0].style.display = "block";
-    document.getElementsByClassName("hide")[1].style.display = "block";
+    document.getElementById(`hide-${id}`)[1].style.display = "block";
 }
 function closeReplyBox() {
     // document.getElementsByClassName("cover")[0].style.display = "none";

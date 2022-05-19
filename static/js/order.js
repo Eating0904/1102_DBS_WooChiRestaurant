@@ -3,7 +3,7 @@
 
 
 function order() {
-    let url = "../php/order.php";
+    let url = "../php/insert_order.php";
     let data = {
         "name" : $("input[name='name']").val(),
         "phone" : $("input[name='phone']").val(),

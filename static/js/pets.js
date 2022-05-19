@@ -1,29 +1,6 @@
-// let DOGS = [
-//     {"photo":'../logo.png', "name":'A', "variety":'A1', "size":'A2', "gender":'A3', "age":'A4', "description":'A5', "晶片":'Y', "結紮":'Y'},
-//     {"photo":'../logo2.png', "name":'B', "variety":'B1', "size":'B2', "gender":'B3', "age":'B4', "description":'B5', "晶片":'N', "結紮":'N'},
-//     {"photo":'../logo3.png', "name":'C', "variety":'C1', "size":'C2', "gender":'C3', "age":'C4', "description":'C5', "晶片":'Y', "結紮":'Y'},
-//     {"photo":'../logo.png', "name":'D', "variety":'D1', "size":'D2', "gender":'D3', "age":'D4', "description":'D5', "晶片":'N', "結紮":'N'},
-//     {"photo":'../logo2.png', "name":'E', "variety":'E1', "size":'E2', "gender":'E3', "age":'E4', "description":'E5', "晶片":'Y', "結紮":'Y'},
-//     {"photo":'../logo3.png', "name":'F', "variety":'F1', "size":'F2', "gender":'F3', "age":'F4', "description":'F5', "晶片":'N', "結紮":'N'},
-//     {"photo":'../logo.png', "name":'G', "variety":'G1', "size":'G2', "gender":'G3', "age":'G4', "description":'G5', "晶片":'Y', "結紮":'Y'},
-//     {"photo":'../logo2.png', "name":'H', "variety":'H1', "size":'H2', "gender":'H3', "age":'H4', "description":'H5', "晶片":'N', "結紮":'N'},
-// ]
-
-// let CATS = [
-//     {"photo":'../logo2.png', "name":'a', "variety":'a1', "size":'a2', "gender":'a3', "age":'a4', "description":'a5', "晶片":'Y', "結紮":'Y'},
-//     {"photo":'../logo3.png', "name":'b', "variety":'b1', "size":'b2', "gender":'b3', "age":'b4', "description":'b5', "晶片":'N', "結紮":'N'},
-//     {"photo":'../logo.png', "name":'c', "variety":'c1', "size":'c2', "gender":'c3', "age":'c4', "description":'c5', "晶片":'Y', "結紮":'Y'},
-//     {"photo":'../logo2.png', "name":'d', "variety":'d1', "size":'d2', "gender":'d3', "age":'d4', "description":'d5', "晶片":'N', "結紮":'N'},
-//     {"photo":'../logo3.png', "name":'e', "variety":'e1', "size":'e2', "gender":'e3', "age":'e4', "description":'e5', "晶片":'Y', "結紮":'Y'},
-//     {"photo":'../logo.png', "name":'f', "variety":'f1', "size":'f2', "gender":'f3', "age":'f4', "description":'f5', "晶片":'N', "結紮":'N'},
-//     {"photo":'../logo2.png', "name":'g', "variety":'g1', "size":'g2', "gender":'g3', "age":'g4', "description":'g5', "晶片":'Y', "結紮":'Y'},
-//     {"photo":'../logo3.png', "name":'h', "variety":'h1', "size":'h2', "gender":'h3', "age":'h4', "description":'h5', "晶片":'N', "結紮":'N'},
-// ]
-
-
 function putPets() {
     $.post(
-        "../php/pets.php",
+        "../php/show_pets.php",
         "",
         (response, status) => {
             if (status == "success") {

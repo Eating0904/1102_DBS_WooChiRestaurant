@@ -14,7 +14,7 @@
 
 function putImage() {
     $.post(
-        "../php/menu.php",
+        "../php/show_menu.php",
         "",
         (response, status) => {
             if (status == "success") {

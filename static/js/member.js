@@ -1,18 +1,36 @@
-let MEMBER= [
-    {"name":'Eating', "tel":'0123456789',"mail":'12345@54321',"points":'100'},
-]
+// let MEMBER= [
+//     {"name":'Eating', "tel":'0123456789',"mail":'12345@54321',"points":'100'},
+// ]
 
 let ACCOUNT= [
     {"account":'Eating0904', "password":"9876654321"},
 ]
+let ORDERS= [
+    {"o_id":'0', "日期":'2022-05-08', "時間":"17:00"},
+    {"o_id":'1', "日期":'2022-05-20', "時間":"18:00"},
+]
+
+
 
 /* 會員資料 */
 function putMemberInfo() {
-    let member = document.getElementById("member").getElementsByTagName("span");
-    member[0].textContent += `${MEMBER[0]["name"]}`;
-    member[1].textContent += `${MEMBER[0]["tel"]}`;
-    member[2].textContent += `${MEMBER[0]["mail"]}`;
-    member[3].textContent += `${MEMBER[0]["points"]}`;
+    $.post(
+        "../php/show_customer.php",
+        "",
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    let MEMBER = response["data"];
+                    let member = document.getElementById("member").getElementsByTagName("span");
+                    member[0].textContent += `${MEMBER["c_name"]}`;
+                    member[1].textContent += `${MEMBER["c_phone"]}`;
+                    member[2].textContent += `${MEMBER["c_mail"]}`;
+                    member[3].textContent += `${MEMBER["c_points"]}`;
+                    
+                }
+            }
+        }
+    )
 }
 function showMemberEditBox() {
     // document.getElementsByClassName("cover")[0].style.display = "block";
@@ -42,7 +60,11 @@ function postNewMemberInfo(url, data) {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
-                    // fun___(response["data"])
+                    alert("變更成功");
+                    putMemberInfo();
+                }
+                else {
+                    console.log(response["error"]);
                 }
             }
         }
@@ -92,22 +114,26 @@ function postNewMemberAccount(url, data) {
 }
 
 /* 訂單紀錄 */
-// function putOrderList {
-//     let list = document.getElementById("orderlist")
-
-//     <tr>
-//         <span><td>2022-05-08</td></span>
-//         <span><td>14:00</td></span>
-//         <td>
-//             <button type="button" class="btn btn-primary btn-sm">詳細資料</button>
-//         </td>   
-//     </tr>
-
-
-// }
+function putOrderList() {
+    let list = document.getElementById("orderlist");
+    for(let i=0; i<ORDERS.length; i++) {
+        let text = `
+                    <tr>
+                        <td>${i+1}</td> 
+                        <td>${ORDERS[i]['日期']}</td>
+                        <td>${ORDERS[i]['時間']}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm" id="orderDetail-${ORDERS[i]['o_id']}" onclick="showOrderDetail( )">詳細資料</button>
+                        </td>   
+                    </tr>        
+                    `
+        list.innerHTML += text;
+    }
+}
 
 
 window.onload = function() {
     putMemberInfo();
     putMemberAccount();
+    putOrderList();
 }

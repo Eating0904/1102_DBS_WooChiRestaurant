@@ -3,21 +3,22 @@
 require("database.php");
 class show {
     static function customer($u_id) {
-        
-       $sql = " select c_name,c_phone, c_mail, c_points from customer WHERE u_id = '$u_id'; ";
-       $result =  database::$conn->query($sql);// or die("select error");
-
-       while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
-        $temp=[
-            "content" => $row["n_information"],
-            "date" => $row["release_date"]
-        ];
-        array_push($array,$temp); 
-    }
-   return $array ;
-       $row =  $result->fetch_array(MYSQLI_ASSOC);
+        $array = [];
+        $sql = " select c_name,c_phone, c_mail, c_points from customer WHERE u_id = '$u_id'; ";
+        $result =  database::$conn->query($sql);// or die("select error");
+        while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
+            $temp=[
+                "c_name" => $row["c_name"],
+                "c_phone" => $row["c_phone"],
+                "c_mail" => $row["c_mail"],
+                "c_points" => $row["c_points"],
+            ];
+            array_push($array,$temp); 
+        }
+        return $array ;
+        $row =  $result->fetch_array(MYSQLI_ASSOC); 
         //var_dump($row);
-       return $row ;
+        return $row ;
     }
     static function restaurant($u_id) {
         $sql = " SELECT name,mail, phone,location,opening_hour,description FROM restaurant WHERE u_id= '$u_id'; "; 
