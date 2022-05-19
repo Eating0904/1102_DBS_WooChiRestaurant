@@ -6,6 +6,15 @@ class show {
         
        $sql = " select c_name,c_phone, c_mail, c_points from customer WHERE u_id = '$u_id'; ";
        $result =  database::$conn->query($sql);// or die("select error");
+
+       while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
+        $temp=[
+            "content" => $row["n_information"],
+            "date" => $row["release_date"]
+        ];
+        array_push($array,$temp); 
+    }
+   return $array ;
        $row =  $result->fetch_array(MYSQLI_ASSOC);
         //var_dump($row);
        return $row ;

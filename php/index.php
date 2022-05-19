@@ -18,31 +18,31 @@
 	<input type="submit" value="會員註冊">
 </form>
 
-<form name="店家資料" method="post" action="restaurant.php" >
+<form name="店家資料" method="post" action="show_restaurant.php" >
 <input type="submit" value="顯示店家資料">
 </form>  
 
-<form name="最新消息" method="post" action="news.php" >
+<form name="最新消息" method="post" action="show_news.php" >
 <input type="submit" value="顯示最新消息">
 </form>
 
-<form name="評論" method="post" action="rate.php" >
+<form name="評論" method="post" action="show_rate.php" >
 <input type="submit" value="顯示評論">
 </form>
 
-<form name="寵物資訊" method="post" action="pets.php" >
+<form name="寵物資訊" method="post" action="show_pets.php" >
 <input type="submit" value="顯示寵物資訊">
 </form>
 
-<form name="menu" method="post" action="menu.php" >
+<form name="menu" method="post" action="show_menu.php" >
 <input type="submit" value="顯示菜單">
 </form>
 
-<form name="店內守則" method="post" action="rules.php" >
+<form name="店內守則" method="post" action="show_rules.php" >
 <input type="submit" value="顯示店內守則">
 </form>
 
-<form name="會員專區" method="post" action="customer.php" >
+<form name="會員專區" method="post" action="show_customer.php" >
 	<input type="submit" value="顯示會員資料(u_id=2)">
 </form> 
 
