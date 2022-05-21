@@ -1,7 +1,3 @@
-<!--<form name="form1" method="post" action="insert.php" >
-<input type="submit" value="送出">
-</form>-->  
-
 <form method="post" action="user_login.php">
 	<input type='text' name='account' placeholder="請輸入帳號">
 	<input type='password' name='password' placeholder="請輸入密碼">
@@ -45,8 +41,6 @@
 <form name="會員專區" method="post" action="show_customer.php" >
 	<input type="submit" value="顯示會員資料(u_id=2)">
 </form> 
-
-
 
 <h4> "(u_id=2)新增評論" </h4>
 <form name="評論" method="post" action="insert_rate.php" >

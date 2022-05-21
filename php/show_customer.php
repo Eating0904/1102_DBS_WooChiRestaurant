@@ -1,6 +1,7 @@
 <?php
     require("show.php");
     $u_id = 2 ;//假設
+    //$u_id=$_SESSION["u_id"];
     $response = [
         "status" => "fail",
     ];

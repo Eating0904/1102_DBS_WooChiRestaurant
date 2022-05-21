@@ -5,8 +5,8 @@ $response = [
     "status" => "fail",
 ];
 
-$star = $_POST["star"];
-$content = $_POST["content"];
+$star = $_REQUEST["star"];
+$content = $_REQUEST["content"];
 $date = date('Y-m-d');
 //$u_id = $_SESSION["id"]; 
 $u_id = 2 ; 
