@@ -103,8 +103,7 @@ require("../php/User.php");
         <div class="col-2">
             <h3>會員專區</h3>
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">基本資料</a>
-                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">帳號設定</a>
+                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">會員資料</a>
                 <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">訂單紀錄</a>
             </div>
         </div>
@@ -112,8 +111,9 @@ require("../php/User.php");
             <div class="tab-content" id="v-pills-tabContent">
                 <!-- 基本資料 -->
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                    <h4>基本資料</h4>
+                    <h4>會員資料</h4>
                     <div id="member">
+                        <span name="account">帳號 : </span><br>
                         <span name="name">姓名 : </span><br>
                         <span  name="tel">連絡電話 : </span><br>
                         <span  name="mail">聯絡信箱 : </span><br>
@@ -122,94 +122,73 @@ require("../php/User.php");
                         <span>會員點數 : </span><br>
                     </div>
                     <!-- 當按下編輯按鈕 -->
-                    <div id="editmember">
+                    <form id="editmember">
                         <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">姓名</span>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">帳號</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
                             </div>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
-                        </div>
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">連絡電話</span>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">姓名</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
                             </div>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
-                        </div>
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">連絡信箱</span>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">連絡電話</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
                             </div>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-sm" id="saveNewMemberInfo">儲存變更</button>
-                    </div>
-                </div>
-                <!-- 帳號設定 -->
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    <h4>帳號設定</h4>
-                    <div id="account">
-                        <span>帳號 : </span><br>
-                        <span>密碼 : </span><br>
-                        <button type="button" class="btn btn-primary btn-sm" onclick="showAccountEditBox()">編輯</button>
-                    </div>
-                    <!-- 當按下編輯按鈕 -->
-                    <div id="editaccount">
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm" name="account">帳號</span>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">連絡信箱</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
                             </div>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
+                            <button type="submit" class="btn btn-primary btn-sm" id="saveNewMemberInfo" onclick="closeMemberEditBox()">儲存變更</button>
                         </div>
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm" name="password">密碼</span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
-                        </div>
-                        <button type="button" class="btn btn-primary btn-sm" id="saveNewAccount">儲存變更</button>
-                    </div>
-                </div>
-                <!-- 訂單紀錄 -->
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                    <h4>訂單紀錄</h4>
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th scope="col">日期</th>
-                                <th scope="col">時間</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody id="orderlist"></tbody>
-                    </table>
-                    <!-- 當按下詳細資料 -->
-                    <div class="card w-50">
-                        <div class="card-body">
-                            <p>
-                                <h5 class="card-title">#1&emsp;顧客姓名&emsp;2022-05-08&emsp;14:00</h5>
-                            </p>
-                            <p class="card-text">
+                </form>
+                    <!-- 訂單紀錄 -->
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        <h4>訂單紀錄</h4>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th scope="col">用餐日期及時間</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="orderlist"></tbody>
+                        </table>
+                        <!-- 當按下詳細資料 -->
+                        <div class="card w-50">
+                            <div class="card-body">
                                 <p>
-                                    <span>用餐人數 : </span><br>
-                                    <span>用餐區域 : </span><br>
-                                    <span>領養意願 : </span><br>
-                                    <span>備註 : </span><br>
+                                    <h5 class="card-title">#1&emsp;顧客姓名&emsp;2022-05-08&emsp;14:00</h5>
                                 </p>
-                                <p>
-                                    <span>聯絡電話 : </span><br>
-                                    <span>聯絡信箱 : </span><br>
+                                <p class="card-text">
+                                    <p>
+                                        <span>用餐人數 : </span><br>
+                                        <span>用餐區域 : </span><br>
+                                        <span>領養意願 : </span><br>
+                                        <span>備註 : </span><br>
+                                    </p>
+                                    <p>
+                                        <span>聯絡電話 : </span><br>
+                                        <span>聯絡信箱 : </span><br>
+                                    </p>
                                 </p>
-                            </p>
-                            <a href="#" class="btn btn-primary btn-sm">編輯</a>
-                            <button type="button" class="btn btn-primary btn-sm">刪除</button>
+                                <a href="#" class="btn btn-primary btn-sm">編輯</a>
+                                <button type="button" class="btn btn-primary btn-sm">刪除</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
-    
 </body>
 </html>

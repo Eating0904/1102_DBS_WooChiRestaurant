@@ -1,12 +1,28 @@
-let RATE = [
-    {"name":'Eating1',"star":'1',"content":'AAA',"reply":'ㄅㄅㄅ'},
-    {"name":'Eating2',"star":'2',"content":'BBB',"reply":'ㄆㄆㄆ'},
-    {"name":'Eating3',"star":'3',"content":'CCC',"reply":'ㄇㄇㄇ'},
-    {"name":'Eating4',"star":'4',"content":'DDD',"reply":'ㄉㄉㄉ'},
-    {"name":'Eating5',"star":'5',"content":'EEE',"reply":'ㄌㄌㄌ'},
-]
+// let RATE = [
+//     {"name":'Eating1',"star":'1',"content":'AAA',"reply":'ㄅㄅㄅ'},
+//     {"name":'Eating2',"star":'2',"content":'BBB',"reply":'ㄆㄆㄆ'},
+//     {"name":'Eating3',"star":'3',"content":'CCC',"reply":'ㄇㄇㄇ'},
+//     {"name":'Eating4',"star":'4',"content":'DDD',"reply":'ㄉㄉㄉ'},
+//     {"name":'Eating5',"star":'5',"content":'EEE',"reply":'ㄌㄌㄌ'},
+// ]
+function postRate() {
+    $.post(
+        "../php/show_rate.php",
+        "",
+        (response, status) => {
+            if (status == "success") {
+                console.log(response);
+                if (response["status"] == "success") {
+                    let RATE = response["data"];
+                    //console.log(RATE)
+                    putRate(RATE);
+                }
+            }
+        }
+    )
+}
 
-function putText() {
+function putRate(RATE) {
     let star = document.getElementById("rateContent")
     for(let i=0; i<RATE.length;i++){
         let content = `<div class="card w-75">
@@ -34,9 +50,9 @@ function putText() {
                                 </div>
                                 <hr>
                                 <p class="card-text" name="ratecontent">${RATE[i]["content"]}</p>
-                                <p class="card-text" name="ratecontent">WooChi : ${RATE[i]["reply"]}</p>
+                                <p class="card-text" name="ratecontent">WooChi : ${RATE[i]["r_reply"]}</p>
                                 <!-- 店家才有 -->
-                                <button type="button" class="btn btn-primary btn-sm" onclick="showReplyBox()">回覆</button>
+                                <button type="button" class="btn btn-primary btn-sm" id="hide-${RATE[i]["r_id"]}" onclick="showReplyBox()">回覆</button>
                                 <!-- 點了回覆之後 -->
                                 <div class="hide" id="hide">
                                     <div class="card w-75">
@@ -55,33 +71,32 @@ function putText() {
         star.innerHTML += content;
         setTimeout(
             function() {
-                $(`#star-${RATE[i]["star"]}-${i}`).prop("checked", true)
+                $(`#star-${RATE[i]["score"]}-${i}`).prop("checked", true)
             },
             1
         );
     }
 
 }
-function showRateBox(id) {
+function showRateBox() {
     // document.getElementsByClassName("cover")[0].style.display = "block";
-    document.getElementsByClassName(`hide-${id}`)[0].style.display = "block";
+    document.getElementsByClassName("hide")[0].style.display = "block";
 }
 function closeRateBox() {
     // document.getElementsByClassName("cover")[0].style.display = "none";
     document.getElementsByClassName("hide")[0].style.display = "none";
 }
 
-function showReplyBox() {
+function showReplyBox(id) {
     // document.getElementsByClassName("cover")[0].style.display = "block";
-    document.getElementById(`hide-${id}`)[1].style.display = "block";
+    document.getElementById(`hide-${id}`).style.display = "block";
 }
 function closeReplyBox() {
     // document.getElementsByClassName("cover")[0].style.display = "none";
-    document.getElementsByClassName("hide")[1].style.display = "none";
+    document.getElementById(`hide-${id}`).style.display = "none";
 }
 
-
 window.onload = function() {
-    putText();
+    postRate();
 
 }
