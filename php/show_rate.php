@@ -5,6 +5,7 @@ $response = [
     "status" => "success"
 ];
 $array = [] ;
+
 $row=show::rate($array); 
 if( $row ) {
     $response["status"] = "success";

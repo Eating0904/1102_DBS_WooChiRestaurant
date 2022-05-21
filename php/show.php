@@ -97,20 +97,37 @@ class show {
         return $array ;
     }
     static function rate($array) {
-        $sql = " SELECT u_id,score,r_date,r_content,r_reply FROM rate; ";
+        $sql = " SELECT u_id FROM rate; ";
         $result =  database::$conn->query($sql);
-       
-        while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
+
+        while( $row =  $result->fetch_array(MYSQLI_ASSOC)  ){
+            $u_id = $row["u_id"];
+
+            $sql_1 = " select c_name from customer WHERE u_id = '$u_id'; ";
+            $result_1 =  database::$conn->query($sql_1);// or die("select error");
+            $row_1 =  $result_1->fetch_array(MYSQLI_ASSOC);
             $temp=[
-                "u_id" => $row["u_id"],
-                "score" => $row["score"],
-                "date" => $row["r_date"],
-                "content" => $row["r_content"],
-                "r_reply" => $row["r_reply"]
+                "name" => $row_1["c_name"],
+            ];  
+            array_push($array,$temp); 
+            
+
+            $sql_2 = " select r_id,score,r_date,r_content,r_reply from rate WHERE u_id = '$u_id'; ";
+            $result_2 =  database::$conn->query($sql_2);// or die("select error");
+            
+            $row_2 =  $result_2->fetch_array(MYSQLI_ASSOC);
+            $temp=[
+                "r_id" => $row_2["r_id"],
+                "score" => $row_2["score"],
+                "date" => $row_2["r_date"],
+                "content" => $row_2["r_content"],
+                "r_reply" => $row_2["r_reply"]
             ];
             array_push($array,$temp); 
+            
+            
         }
-       return $array ;
+        return $array ;
     }
     static function order($u_id,$array) {
         $sql = " SELECT meal_time,num_of_people,seat,adoption,points,note FROM orders WHERE u_id='$u_id';";
