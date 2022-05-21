@@ -15,10 +15,20 @@ class show {
             ];
             array_push($array,$temp); 
         }
+        $sql = " select account from users WHERE u_id = '$u_id'; ";
+        $result =  database::$conn->query($sql);// or die("select error");
+        while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
+            $temp=[
+                "account" => $row["account"],
+            ];
+            array_push($array,$temp); 
+        }
+
+
         return $array ;
-        $row =  $result->fetch_array(MYSQLI_ASSOC); 
-        //var_dump($row);
-        return $row ;
+        // $row =  $result->fetch_array(MYSQLI_ASSOC); 
+        // //var_dump($row);
+        // return $row ;
     }
     static function restaurant($u_id) {
         $sql = " SELECT name,mail, phone,location,opening_hour,description FROM restaurant WHERE u_id= '$u_id'; "; 
