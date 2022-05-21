@@ -21,7 +21,7 @@ require("../php/User.php");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="../static/js/menu.js"></script>
-    <!-- <link rel="stylesheet" href="../static/css/menu.css"> -->
+    <link rel="stylesheet" href="../static/css/menu.css">
 </head>
 
 <body>

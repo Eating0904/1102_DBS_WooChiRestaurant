@@ -21,6 +21,7 @@ require("../php/User.php");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <script src="../static/js/home.js"></script>
+    <link rel="stylesheet" href="../static/css/app.css">
 </head>
 
 <body>
@@ -99,38 +100,45 @@ require("../php/User.php");
 
     <div class="container">
         <!-- 餐廳簡介+LOGO照片 -->
-        <div class="card mb-3">
-            <img src="logo_tmp.jpg" class="card-img-top" alt="Image" height="300">
-            <div class="card-body">
-                <h4 class="card-title">WooChi Restaurant</h4>
-                <p class="card-text" id="description"></p>
+        <p class="center">
+            <div class="card mb-3">
+                <img src="logo_tmp.jpg" class="card-img-top" alt="Image" height="300">
+                <div class="card-body">
+                    <h4 class="card-title">WooChi Restaurant</h4>
+                    <p class="card-text" id="description"></p>
+                </div>
             </div>
-        </div>
-        <!-- 餐廳基本資訊 -->
-        <div>
-            <h4>基本資料</h4>
-            <div id="restaurant">
-                <span></span> <br>
-                <span>地址 : </span> <br>
-                <span>連絡電話 : </span> <br>
-                <span>聯絡信箱 : </span> <br>
-                <span>營業時間 : </span> <br>
+        </p>
+        <p class="center">
+            <!-- 餐廳基本資訊 -->
+            <div>
+                <h4>基本資料</h4>
+                <div id="restaurant">
+                    <span></span> <br>
+                    <span>地址 : </span> <br>
+                    <span>連絡電話 : </span> <br>
+                    <span>聯絡信箱 : </span> <br>
+                    <span>營業時間 : </span> <br>
+                </div>
             </div>
-        </div>
+        </p>
         <hr>
-        <!-- 餐廳最新消息 -->
-        <div>
-            <h4>最新消息</h4>
-            <table class="table table-sm">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th scope="col">內容</th>
-                        <th scope="col">發布日期</th>
-                    </tr>
-                </thead>
-                <tbody id="news"></tbody>
-        </div>
+        <p class="center">
+            <!-- 餐廳最新消息 -->
+            <div>
+                <h4>最新消息</h4>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th scope="col">內容</th>
+                            <th scope="col">發布日期</th>
+                        </tr>
+                    </thead>
+                    <tbody id="news"></tbody>
+            </div>
+        </p>
+
     </div>
 
 

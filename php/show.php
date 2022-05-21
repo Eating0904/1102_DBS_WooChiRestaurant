@@ -29,7 +29,7 @@ class show {
     }
     static function news($u_id,$array) {
         
-        $sql = " SELECT n_information, release_date FROM news WHERE  u_id= '$u_id'; ";
+        $sql = " SELECT n_information, release_date FROM news WHERE  u_id= '$u_id' order by release_date DESC; ";
         $result =  database::$conn->query($sql);
        
         while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){

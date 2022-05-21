@@ -19,8 +19,9 @@ function putMemberInfo() {
         "",
         (response, status) => {
             if (status == "success") {
+                console.log(response);
                 if (response["status"] == "success") {
-                    let MEMBER = response["data"];
+                    let MEMBER = response["data"][0];
                     let member = document.getElementById("member").getElementsByTagName("span");
                     member[0].textContent += `${MEMBER["c_name"]}`;
                     member[1].textContent += `${MEMBER["c_phone"]}`;
@@ -38,11 +39,23 @@ function showMemberEditBox() {
     editMemberInfo();
 }
 function editMemberInfo() {
-    let member = document.getElementById("editmember").getElementsByTagName("input");
-    member[0].value = `${MEMBER[0]["name"]}`;
-    member[1].value = `${MEMBER[0]["tel"]}`;
-    member[2].value = `${MEMBER[0]["mail"]}`;
-
+    $.post(
+        "../php/show_customer.php",
+        "",
+        (response, status) => {
+            if (status == "success") {
+                console.log(response);
+                if (response["status"] == "success") {
+                    let MEMBER = response["data"][0];
+                    let member = document.getElementById("editmember").getElementsByTagName("input");
+                    member[0].value = `${MEMBER["c_name"]}`;
+                    member[1].value = `${MEMBER["c_phone"]}`;
+                    member[2].value = `${MEMBER["c_mail"]}`;
+                    
+                }
+            }
+        }
+    )
     let url = ""
     data = {
         "name" : $("input[name='name']").val(),

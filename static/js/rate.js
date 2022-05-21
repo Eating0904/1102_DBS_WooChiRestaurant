@@ -53,8 +53,12 @@ function putText() {
                             </div>
                         </div>`;
         star.innerHTML += content;
-        $(`input[name="star"][id="star-${RATE[i]["star"]}-${i}"`).prop("checked", true)
-        console.log(`input[name="star"][id="star-${RATE[i]["star"]}-${i}"]`)
+        setTimeout(
+            function() {
+                $(`#star-${RATE[i]["star"]}-${i}`).prop("checked", true)
+            },
+            1
+        );
     }
 
 }
