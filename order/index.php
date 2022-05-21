@@ -116,47 +116,40 @@ require("../php/User.php");
     </nav>
 
     <div class="container">
+        <div>
+            <h5>聯絡資料</h5>
+            <div id="member">
+                <small class="text-muted" name="name">姓名 : </small><br>
+                <small class="text-muted" name="tel">連絡電話 : </small><br>
+                <small class="text-muted" name="mail">聯絡信箱 : </small><br>
+            </div>
+            <small class="text-muted"> *若要更改，請至「會員專區」 -> 「會員專區」 修改 </small>
+        </div>
         <form>
             <div>
-                <h5>聯絡資料</h5>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="check-member-data">
-                    <label class="form-check-label" for="defaultCheck1">
-                        同會員資料
-                    </label>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="">姓名</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="請輸入姓名" name="name">
-                    <label for="">連絡電話</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="請輸入聯絡電話" name="phone">
-                    <label for="">連絡信箱</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="請輸入聯絡信箱" name="email">
-                </div>
-            </div>
-            <hr>
-            <div>
                 <h5>訂位資訊</h5>
-                <div class="form-group col-md-3">
-                    <label for="start_date">日期</label>
-                    <input type="text" class="form-control datepicker " id="start_date" name="start_date"
-                        placeholder=" YYYY-MM-DD">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputState">時間</label>
-                    <select id="inputState" class="form-control" name="time">
-                        <option selected>請選擇時間...</option>
-                        <option>10:00</option>
-                        <option>11:00</option>
-                        <option>12:00</option>
-                        <option>13:00</option>
-                        <option>14:00</option>
-                        <option>15:00</option>
-                        <option>16:00</option>
-                        <option>17:00</option>
-                        <option>18:00</option>
-                    </select>
-                </div>
+                <form>
+                    <div class="form-group col-md-3">
+                        <label for="start_date">日期</label>
+                        <input type="text" class="form-control datepicker " id="start_date" name="start_date"
+                            placeholder=" YYYY-MM-DD">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputState">時間</label>
+                        <select id="inputState" class="form-control" name="time">
+                            <option selected>請選擇時間...</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                        </select>
+                    </div>
+                </form>
                 <div class="form-group col-md-3">
                     <label for="">用餐人數</label>
                     <input class="form-control" type="text" placeholder="請輸入用餐人數" name="people">
@@ -184,8 +177,7 @@ require("../php/User.php");
                     <textarea class="text" placeholder="如果有其他特殊需求，請留言告訴我們!" name="note"></textarea>
                 </div>
             </div>
-            <button type="button" id="submit">Submit</button>
-            <br>
+            <button class="btn btn-primary btn-sm" type="button" id="subject">送出</button>
         </form>
     </div>
 </body>

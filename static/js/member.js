@@ -1,19 +1,10 @@
-// let MEMBER= [
-//     {"name":'Eating', "tel":'0123456789',"mail":'12345@54321',"points":'100'},
-// ]
-
-let ACCOUNT= [
-    {"account":'Eating0904', "password":"9876654321"},
-]
 let ORDERS= [
     {"o_id":'0', "日期":'2022-05-08', "時間":"17:00"},
     {"o_id":'1', "日期":'2022-05-20', "時間":"18:00"},
 ]
 
-
-
 /* 會員資料 */
-function putMemberInfo() {
+function postMember() {
     $.post(
         "../php/show_customer.php",
         "",
@@ -21,43 +12,39 @@ function putMemberInfo() {
             if (status == "success") {
                 console.log(response);
                 if (response["status"] == "success") {
-                    let MEMBER = response["data"][0];
-                    let member = document.getElementById("member").getElementsByTagName("span");
-                    member[0].textContent += `${MEMBER["c_name"]}`;
-                    member[1].textContent += `${MEMBER["c_phone"]}`;
-                    member[2].textContent += `${MEMBER["c_mail"]}`;
-                    member[3].textContent += `${MEMBER["c_points"]}`;
-                    
+                    let MEMBER = response["data"];
+                    putMemberInfo(MEMBER);
+                    editMemberInfo(MEMBER);
                 }
             }
         }
     )
+}
+function putMemberInfo(MEMBER) {
+    let member = document.getElementById("member").getElementsByTagName("span");
+    member[0].textContent += `${MEMBER[1]["account"]}`;
+    member[1].textContent += `${MEMBER[0]["c_name"]}`;
+    member[2].textContent += `${MEMBER[0]["c_phone"]}`;
+    member[3].textContent += `${MEMBER[0]["c_mail"]}`;
+    member[4].textContent += `${MEMBER[0]["c_points"]}`;
 }
 function showMemberEditBox() {
     // document.getElementsByClassName("cover")[0].style.display = "block";
     document.getElementById("editmember").style.display = "block";
-    editMemberInfo();
 }
-function editMemberInfo() {
-    $.post(
-        "../php/show_customer.php",
-        "",
-        (response, status) => {
-            if (status == "success") {
-                console.log(response);
-                if (response["status"] == "success") {
-                    let MEMBER = response["data"][0];
-                    let member = document.getElementById("editmember").getElementsByTagName("input");
-                    member[0].value = `${MEMBER["c_name"]}`;
-                    member[1].value = `${MEMBER["c_phone"]}`;
-                    member[2].value = `${MEMBER["c_mail"]}`;
-                    
-                }
-            }
-        }
-    )
+function closeMemberEditBox() {
+    // document.getElementsByClassName("cover")[0].style.display = "block";
+    document.getElementById("editmember").style.display = "none";
+}
+function editMemberInfo(MEMBER) {
+    let member = document.getElementById("editmember").getElementsByTagName("input");
+    member[0].value = `${MEMBER[1]["account"]}`;
+    member[1].value = `${MEMBER[0]["c_name"]}`;
+    member[2].value = `${MEMBER[0]["c_phone"]}`;
+    member[3].value = `${MEMBER[0]["c_mail"]}`;
     let url = ""
     data = {
+        "account" : $("input[name='account']").val(),
         "name" : $("input[name='name']").val(),
         "tel" : $("input[name='tel']").val(),
         "mail" : $("input[name='mail']").val(),
@@ -74,7 +61,7 @@ function postNewMemberInfo(url, data) {
             if (status == "success") {
                 if (response["status"] == "success") {
                     alert("變更成功");
-                    putMemberInfo();
+                    postMember();
                 }
                 else {
                     console.log(response["error"]);
@@ -85,56 +72,30 @@ function postNewMemberInfo(url, data) {
 }
 
 
-/* 會員帳號 */
-function putMemberAccount() {
-    let account = document.getElementById("account").getElementsByTagName("span");
-    account[0].textContent += `${ACCOUNT[0]["account"]}`;
-    account[1].textContent += `${ACCOUNT[0]["password"]}`;
-}
-
-function showAccountEditBox() {
-    // document.getElementsByClassName("cover")[0].style.display = "block";
-    document.getElementById("editaccount").style.display = "block";
-    editMemberAccount();
-}
-
-function editMemberAccount() {
-    let account = document.getElementById("editaccount").getElementsByTagName("input");
-    account[0].value = `${ACCOUNT[0]["account"]}`;
-    account[1].value = `${ACCOUNT[0]["password"]}`;
-
-    let url = ""
-    data = {
-        "account" : $("input[name='account']").val(),
-        "password" : $("input[name='password']").val(),
-    }
-    $("#saveNewAccount").click(() => {
-        postNewMemberAccount(url, data);
-    })
-}
-function postNewMemberAccount(url, data) {
+/* 訂單紀錄 等後端API開好再處理*/
+function postOrder() {
     $.post(
-        url,
-        data,
+        "../php/show_order.php",
+        "",
         (response, status) => {
             if (status == "success") {
+                console.log(response);
                 if (response["status"] == "success") {
-                    // fun___(response["data"])
+                    //console.log(response);
+                    putOrderList(response);
                 }
             }
         }
     )
 }
-
-/* 訂單紀錄 */
-function putOrderList() {
+function putOrderList(response) {
+    let ORDERS = response['data_order']
     let list = document.getElementById("orderlist");
     for(let i=0; i<ORDERS.length; i++) {
         let text = `
                     <tr>
                         <td>${i+1}</td> 
-                        <td>${ORDERS[i]['日期']}</td>
-                        <td>${ORDERS[i]['時間']}</td>
+                        <td>${ORDERS[i]['meal_time']}</td>
                         <td>
                             <button type="button" class="btn btn-primary btn-sm" id="orderDetail-${ORDERS[i]['o_id']}" onclick="showOrderDetail( )">詳細資料</button>
                         </td>   
@@ -144,9 +105,7 @@ function putOrderList() {
     }
 }
 
-
 window.onload = function() {
-    putMemberInfo();
-    putMemberAccount();
-    putOrderList();
+    postMember();
+    postOrder();
 }
