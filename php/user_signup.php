@@ -4,11 +4,11 @@
         "status" => "fail",
     ];
 
-    $account = $_POST["account"];
-    $password = $_POST["password"];
-    $name = $_POST["name"]; 
-    $phone = $_POST["tel"];
-    $mail = $_POST["mail"];
+    $account = $_REQUEST["account"];
+    $password = $_REQUEST["password"];
+    $name = $_REQUEST["name"]; 
+    $phone = $_REQUEST["tel"];
+    $mail = $_REQUEST["mail"];
     
     //判斷
     $sql = " select  account from users where account = '$account' ; ";

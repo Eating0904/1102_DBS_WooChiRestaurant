@@ -10,9 +10,8 @@ $response = [
 //     !empty($_REQUEST["time"]) && !empty($_REQUEST["people"])&& 
 //     !empty($_REQUEST["adopt"])&& !empty($_REQUEST["note"])
 if(
-    !empty($_POST["time"]) && !empty($_POST["people"])&& 
-    !empty($_POST["seat"])&&
-    !empty($_POST["adopt"])&& !empty($_POST["note"])
+    !empty($_REQUEST["time"]) && !empty($_REQUEST["people"])&& 
+    !empty($_REQUEST["seat"])&&!empty($_REQUEST["adopt"])
 ) {
     // $name = $_REQUEST["name"];
     // $phone = $_REQUEST["phone"];
@@ -24,12 +23,12 @@ if(
     // $note = $_REQUEST["note"];
 
     //$u_id = $_SESSION["id"]; 
-    $u_id =2;
-    $time = $_POST["time"];
-    $people = $_POST["people"];
-    $seat = $_POST["seat"];
-    $adopt = $_POST["adopt"];
-    $note = $_POST["note"];
+    $u_id = 2 ;
+    $time = $_REQUEST["time"];
+    $people = $_REQUEST["people"];
+    $seat = $_REQUEST["seat"];
+    $adopt = $_REQUEST["adopt"];
+    $note = $_REQUEST["note"];
   
     $sql = "INSERT INTO orders
         (u_id, meal_time, num_of_people, seat, adoption, note) 

@@ -4,7 +4,7 @@
         "status" => "fail",
     ];
 
-    if (user::login($_POST["account"], $_POST["password"])) {
+    if (user::login($_REQUEST["account"], $_REQUEST["password"])) {
         $response["status"] = "success";
     }
     else {
