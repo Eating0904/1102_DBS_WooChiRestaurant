@@ -2,14 +2,14 @@
 <input type="submit" value="送出">
 </form>-->  
 
-<form method="post" action="login.php">
+<form method="post" action="user_login.php">
 	<input type='text' name='account' placeholder="請輸入帳號">
 	<input type='password' name='password' placeholder="請輸入密碼">
 	<input type="submit" value="登入">
 </form>
 
 <h4> "會員註冊" </h4>
-<form method="post" action="signup.php">
+<form method="post" action="user_signup.php">
 	<input type='text' name='account' placeholder="請輸入帳號">
 	<input type='password' name='password' placeholder="請輸入密碼">
 	<input type='text' name='name' placeholder="請輸入名字">
@@ -48,20 +48,20 @@
 
 
 
-<h4> "新增評論" </h4>
+<h4> "(u_id=2)新增評論" </h4>
 <form name="評論" method="post" action="insert_rate.php" >
 <input type='text' name='star' placeholder="星星數">
 <input type='text' name='content' placeholder="內容">
 <input type="submit" value="會員評論">
 </form>
 
-<h4> "回覆評論(r_id預設1)" </h4> 
+<h4> "回覆(r_id=1)評論" </h4> 
 <form name="回覆評論" method="post" action="reply_rate.php" >
 <input type='text' name='content' placeholder="回覆內容">
 <input type="submit" value="回覆">
 </form>
 
-<h4> "訂位" </h4>
+<h4> "(u_id=2)訂位" </h4>
 <form name="訂位" method="post" action="insert_order.php" >
 	<input type='text' name='time' placeholder="時間">	
 	<input type='text' name='people' placeholder="訂位人數">
@@ -71,7 +71,7 @@
 	<input type="submit" value="訂位">
 </form>
 <form name="訂單" action="show_order.php" >
-	<input type="submit" value="顯示訂單資料(u_id=2)">
+	<input type="submit" value="顯示(u_id=2)訂單資料">
 </form> 
 
 <!-- 

@@ -11,8 +11,7 @@ $response = [
 //     !empty($_REQUEST["adopt"])&& !empty($_REQUEST["note"])
 if(
     !empty($_POST["time"]) && !empty($_POST["people"])&& 
-    !empty($_POST["seat"])&&
-    !empty($_POST["adopt"])&& !empty($_POST["note"])
+    !empty($_POST["seat"])&&!empty($_POST["adopt"])
 ) {
     // $name = $_REQUEST["name"];
     // $phone = $_REQUEST["phone"];
@@ -24,7 +23,7 @@ if(
     // $note = $_REQUEST["note"];
 
     //$u_id = $_SESSION["id"]; 
-    $u_id =2;
+    $u_id = 2 ;
     $time = $_POST["time"];
     $people = $_POST["people"];
     $seat = $_POST["seat"];
