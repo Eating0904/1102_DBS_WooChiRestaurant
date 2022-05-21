@@ -97,7 +97,7 @@ class show {
         return $array ;
     }
     static function rate($array) {
-        $sql = " SELECT u_id,score,r_date,r_content FROM rate; ";
+        $sql = " SELECT u_id,score,r_date,r_content,r_reply FROM rate; ";
         $result =  database::$conn->query($sql);
        
         while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
@@ -105,7 +105,8 @@ class show {
                 "u_id" => $row["u_id"],
                 "score" => $row["score"],
                 "date" => $row["r_date"],
-                "content" => $row["r_content"]
+                "content" => $row["r_content"],
+                "r_reply" => $row["r_reply"]
             ];
             array_push($array,$temp); 
         }
