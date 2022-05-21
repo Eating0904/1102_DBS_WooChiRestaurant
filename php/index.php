@@ -65,9 +65,11 @@
 	<input type="submit" value="訂位">
 </form>
 <form name="訂單" action="show_order.php" >
-	<input type="submit" value="顯示(u_id=2)訂單資料">
+	<input type="submit" value="顯示(u_id=2)的訂單資料">
 </form> 
-
+<form name="訂單" action="show_order_detail.php" >
+	<input type="submit" value="顯示詳細訂單資料(o_id=1)">
+</form> 
 <!-- 
 <form name="編輯會員資料" method="post" action="editor_customer.php" >
 	<input type='text' name='name' placeholder="名字">	

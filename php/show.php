@@ -130,7 +130,20 @@ class show {
         return $array ;
     }
     static function order($u_id,$array) {
-        $sql = " SELECT meal_time,num_of_people,seat,adoption,points,note FROM orders WHERE u_id='$u_id';";
+        $sql = " SELECT o_id,meal_time FROM orders WHERE u_id='$u_id' order by o_id DESC;";
+        $result =  database::$conn->query($sql);
+       
+        while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
+            $temp=[
+                "o_id" => $row["o_id"],
+                "meal_time" => $row["meal_time"]
+            ];
+            array_push($array,$temp); 
+        }
+       return $array ;
+    }
+    static function order_detail($o_id,$array) {
+        $sql = " SELECT meal_time,num_of_people,seat,adoption,points,note FROM orders WHERE o_id='$o_id'; ";
         $result =  database::$conn->query($sql);
        
         while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
