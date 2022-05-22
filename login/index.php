@@ -14,6 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <script src="../static/js/login.js"></script>
+    <link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
