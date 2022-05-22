@@ -14,7 +14,7 @@ function postRate() {
                 console.log(response);
                 if (response["status"] == "success") {
                     let RATE = response["data"];
-                    //console.log(RATE)
+                    console.log(RATE)
                     putRate(RATE);
                 }
             }

@@ -165,9 +165,9 @@ require("../php/User.php");
                         </table>
                         <!-- 當按下詳細資料 -->
                         <div class="card w-50">
-                            <div class="card-body">
+                            <div class="card-body" id="orderDetail">
                                 <p>
-                                    <h5 class="card-title">#1&emsp;顧客姓名&emsp;2022-05-08&emsp;14:00</h5>
+                                    <h5 class="card-title"></h5>
                                 </p>
                                 <p class="card-text">
                                     <p>

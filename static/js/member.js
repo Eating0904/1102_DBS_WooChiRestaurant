@@ -1,7 +1,7 @@
-let ORDERS= [
-    {"o_id":'0', "日期":'2022-05-08', "時間":"17:00"},
-    {"o_id":'1', "日期":'2022-05-20', "時間":"18:00"},
-]
+// let ORDERS= [
+//     {"o_id":'0', "日期":'2022-05-08', "時間":"17:00"},
+//     {"o_id":'1', "日期":'2022-05-20', "時間":"18:00"},
+// ]
 
 /* 會員資料 */
 function postMember() {
@@ -71,8 +71,7 @@ function postNewMemberInfo(url, data) {
     )
 }
 
-
-/* 訂單紀錄 等後端API開好再處理*/
+/* 訂單紀錄*/
 function postOrder() {
     $.post(
         "../php/show_order.php",
@@ -81,15 +80,16 @@ function postOrder() {
             if (status == "success") {
                 console.log(response);
                 if (response["status"] == "success") {
-                    //console.log(response);
-                    putOrderList(response);
+                    let ORDERS = response['data_order']
+                    //console.log(ORDERS);
+                    putOrderList(ORDERS);
                 }
             }
         }
     )
 }
-function putOrderList(response) {
-    let ORDERS = response['data_order']
+
+function putOrderList(ORDERS) {
     let list = document.getElementById("orderlist");
     for(let i=0; i<ORDERS.length; i++) {
         let text = `
@@ -97,15 +97,69 @@ function putOrderList(response) {
                         <td>${i+1}</td> 
                         <td>${ORDERS[i]['meal_time']}</td>
                         <td>
-                            <button type="button" class="btn btn-primary btn-sm" id="orderDetail-${ORDERS[i]['o_id']}" onclick="showOrderDetail( )">詳細資料</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="orderDetail-${ORDERS[i]['o_id']}" onclick="postOrderId(${ORDERS[i]['o_id']})">詳細資料</button>
                         </td>   
                     </tr>        
                     `
         list.innerHTML += text;
     }
 }
+function postOrderDetail() {
+    $.post(
+        "../php/show_order_detail.php",
+        "",
+        (response, status) => {
+            if (status == "success") {
+                console.log(response);
+                if (response["status"] == "success") {
+                    // let ORDERDETAIL = response
+                    // //console.log(ORDERDETAIL);
+                    // putOrderDetail(ORDERDETAIL);
+                }
+            }
+        }
+    )
+}
+function postOrderId(id) {
+    let url = ""
+    let data = {
+        "o_id" : id
+    }
+    $.post(
+        url,
+        data,
+        (response, status) => {
+            if (status == "success") {
+                console.log(response);
+                if (response["status"] == "success") {
+                    console.log(data);
+                    postOrderDetail();
+                }
+                else {
+                    console.log(response["error"]);
+                }
+            }
+        }
+    ) 
+}
+function putOrderDetail(){
+    let orderdetail = document.getElementById("orderDetail");
+    let orderdetailmember = orderdetail.getElementsByTagName("h5")[0];
+    orderdetailmember.innerHTML += `顧客姓名&emsp;2022-05-08&emsp;14:00`;
+
+    let orderdetailcontent = orderdetail.getElementsByTagName("span");
+    orderdetailcontent[0].textContent += `用餐人數`;
+    orderdetailcontent[1].textContent += `用餐區域`;
+    orderdetailcontent[2].textContent += `領養意願`;
+    orderdetailcontent[3].textContent += `備註`;
+    orderdetailcontent[4].textContent += `連絡電話`;
+    orderdetailcontent[5].textContent += `聯絡信箱`;
+
+}
+
 
 window.onload = function() {
     postMember();
     postOrder();
+    putOrderDetail();
 }

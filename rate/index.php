@@ -105,7 +105,6 @@ require("../php/User.php");
     <div class="container">
         <h3>關於評價</h3>
         <!-- if已登入 -->
-        <?php if(!empty($_COOKIE) && !empty($_COOKIE["id"])): ?>
             <?php if(User::check()): ?>
                 <!-- if是會員 -->
                 <?php if($_COOKIE["id"] !== "1"): ?>
@@ -150,7 +149,6 @@ require("../php/User.php");
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
-        <?php endif; ?>
         <div id="rateContent"></div>
     </div>
 
