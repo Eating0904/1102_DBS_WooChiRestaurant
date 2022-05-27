@@ -84,18 +84,6 @@ class show {
         }
         return $array ;
     }
-    static function rule($array) {
-        for($i=4; $i<=11 ;$i++){
-            $sql = " SELECT image FROM images WHERE  i_id= '$i'; "; 
-            $result =  database::$conn->query($sql);
-            $row =  $result->fetch_array(MYSQLI_ASSOC);
-            $temp=[
-                "image" => $row["image"]
-            ];
-            array_push($array,$temp); 
-        }
-        return $array ;
-    }
     static function rate($array) {
         $sql = " SELECT u_id FROM rate; ";
         $result =  database::$conn->query($sql);
@@ -106,10 +94,8 @@ class show {
             $sql_1 = " select c_name from customer WHERE u_id = '$u_id'; ";
             $result_1 =  database::$conn->query($sql_1);// or die("select error");
             $row_1 =  $result_1->fetch_array(MYSQLI_ASSOC);
-            $temp=[
-                "name" => $row_1["c_name"],
-            ];  
-            array_push($array,$temp); 
+            $name = $row_1["c_name"];
+        
             
 
             $sql_2 = " select r_id,score,r_date,r_content,r_reply from rate WHERE u_id = '$u_id'; ";
@@ -117,6 +103,7 @@ class show {
             
             $row_2 =  $result_2->fetch_array(MYSQLI_ASSOC);
             $temp=[
+                "name" => $name,
                 "r_id" => $row_2["r_id"],
                 "score" => $row_2["score"],
                 "date" => $row_2["r_date"],
@@ -130,7 +117,7 @@ class show {
         return $array ;
     }
     static function order($u_id,$array) {
-        $sql = " SELECT o_id,meal_time FROM orders WHERE u_id='$u_id' order by o_id DESC;";
+        $sql = " SELECT o_id,meal_time FROM orders WHERE u_id='$u_id' order by meal_time DESC;";
         $result =  database::$conn->query($sql);
        
         while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
