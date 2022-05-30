@@ -5,8 +5,7 @@ $response = [
     "status" => "success"
 ];
 
-//$u_id = $_SESSION["u_id"];
-$u_id=1;
+$u_id = $_SESSION["u_id"];
 $nmae = $_POST["name"];
 $mail = $_POST["mail"];
 $location = $_POST["location"];

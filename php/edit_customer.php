@@ -5,9 +5,7 @@ $response = [
     "status" => "success"
 ];
 
-//$u_id = $_SESSION["u_id"];
-$u_id=2;
-
+$u_id = $_SESSION["u_id"];
 $name = $_REQUEST["name"];
 $phone = $_REQUEST["phone"];
 $mail = $_REQUEST["mail"];

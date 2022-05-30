@@ -5,8 +5,8 @@
     ];
     $array=[];
     
-    $u_id=2;
-    //$u_id=$_SESSION["u_id"];
+    
+    $u_id=$_SESSION["u_id"];
  
     if( $row=show::order($u_id,$array) ) {
         $response["status"] = "success";

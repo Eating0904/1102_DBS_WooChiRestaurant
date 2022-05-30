@@ -119,6 +119,10 @@
 	<input type="submit" value="編輯會員資料">
 </form> 
 
+<form name="" method="post" action="identify_role.php" >
+	<input type="submit" value="user_id">
+</form> 
+
 
 
 <?php	

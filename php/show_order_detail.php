@@ -4,10 +4,9 @@
         "status" => "fail",
     ];
     $array=[];
-    
-    $u_id=2;
+  
     $o_id=1;
-    //$u_id=$_SESSION["u_id"];
+    $u_id=$_SESSION["u_id"];
  
     if( $row=show::customer($u_id) ) {
 		$response["data_customer"] = $row ;

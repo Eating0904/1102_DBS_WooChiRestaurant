@@ -8,8 +8,8 @@ $response = [
 $star = $_REQUEST["star"];
 $content = $_REQUEST["content"];
 $date = date('Y-m-d');
-//$u_id = $_SESSION["id"]; 
-$u_id = 2 ; 
+$u_id=$_SESSION["id"];
+
 
 $sql=" insert into rate(u_id,score,r_date,r_content)values('$u_id','$star','$date','$content');";
 $result = database::$conn->query($sql) or die('error with insert');

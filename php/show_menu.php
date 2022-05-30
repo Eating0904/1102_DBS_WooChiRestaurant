@@ -6,7 +6,6 @@
     ];
     $array=[];
     
-
     if( $row=show::menu($array) ) {
         $response["status"] = "success";
         $response["data"] = $row ;

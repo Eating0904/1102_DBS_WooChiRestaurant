@@ -22,8 +22,8 @@ if(
     // $adopt = $_REQUEST["adopt"];
     // $note = $_REQUEST["note"];
 
-    //$u_id = $_SESSION["id"]; 
-    $u_id = 2 ;
+    $u_id = $_SESSION["id"]; 
+
     $time = $_REQUEST["time"];
     $people = $_REQUEST["people"];
     $seat = $_REQUEST["seat"];

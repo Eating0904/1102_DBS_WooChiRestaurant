@@ -5,8 +5,7 @@ $response = [
     "status" => "success"
 ];
 
-//$u_id = $_SESSION["u_id"];
-$u_id=2;
+$u_id = $_SESSION["u_id"];
 $o_id=1;
 
 $time = $_REQUEST["time"];
