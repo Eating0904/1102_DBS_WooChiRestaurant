@@ -1,0 +1,17 @@
+th, td {
+    /* display: inline-block !important; */
+    text-align: left !important;
+}
+th {
+    background-color: #6FB7B7;
+}
+td {
+    background-color: #ffffff;
+}
+
+#restaurant {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+}

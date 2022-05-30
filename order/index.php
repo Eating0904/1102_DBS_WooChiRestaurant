@@ -32,10 +32,14 @@ require("../php/User.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
     </script>
 
+    <!-- jquery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
     <!-- <script src="/DBS_WooChi_Restaurant/static/js/home.js"></script> -->
     <script src="../static/js/base.js"></script>
     <script src="../static/js/order.js"></script>
     <link rel="stylesheet" href="../static/css/order.css">
+    <!-- <link rel="stylesheet" href="../static/css/app.css"> -->
 
 
 </head>
@@ -74,10 +78,10 @@ require("../php/User.php");
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
-                                    會員專區
+                                    會員
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="../member">會員帳號</a>
+                                    <a class="dropdown-item" href="../member">會員資料</a>
                                     <a class="dropdown-item" href="../membercontact">聯繫客服</a>
                                     <div class="dropdown-divider"></div>
                                     <a href="../php/user_logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
@@ -131,22 +135,22 @@ require("../php/User.php");
                 <form>
                     <div class="form-group col-md-3">
                         <label for="start_date">日期</label>
-                        <input type="text" class="form-control datepicker " id="start_date" name="start_date"
+                        <input type="text" class="form-control datepicker " id="start_date" name="meal_date"
                             placeholder=" YYYY-MM-DD">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="inputState">時間</label>
                         <select id="inputState" class="form-control" name="time">
                             <option selected>請選擇時間...</option>
-                            <option>10:00</option>
-                            <option>11:00</option>
-                            <option>12:00</option>
-                            <option>13:00</option>
-                            <option>14:00</option>
-                            <option>15:00</option>
-                            <option>16:00</option>
-                            <option>17:00</option>
-                            <option>18:00</option>
+                            <option value="10:00:00">10:00</option>
+                            <option value="11:00:00">11:00</option>
+                            <option value="12:00:00">12:00</option>
+                            <option value="13:00:00">13:00</option>
+                            <option value="14:00:00">14:00</option>
+                            <option value="15:00:00">15:00</option>
+                            <option value="16:00:00">16:00</option>
+                            <option value="17:00:00">17:00</option>
+                            <option value="18:00:00">18:00</option>
                         </select>
                     </div>
                 </form>
@@ -154,30 +158,30 @@ require("../php/User.php");
                     <label for="">用餐人數</label>
                     <input class="form-control" type="text" placeholder="請輸入用餐人數" name="people">
                 </div>
-                <div class="form-group col-md-3">
+                <!-- <div class="form-group col-md-3">
                     <label for="">選擇區域</label>
                     <span>(還沒處理)</span>
                     <button class="btn btn-primary btn-sm" type="submit">選擇</button>
-                </div>
+                </div> -->
                 <div class="form-group col-md-3">
                     <label for="">領養意願 : </label>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                            value="option1">
+                            value="Y">
                         <label class="form-check-label" for="inlineRadio1"> Y </label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
+                            value="N">
                         <label class="form-check-label" for="inlineRadio2"> N </label>
                     </div>
                 </div>
                 <div class="form-group col-md-3">
                     <label for="">備註 : </label>
-                    <textarea class="text" placeholder="如果有其他特殊需求，請留言告訴我們!" name="note"></textarea>
+                    <textarea class="text" placeholder="如果有其他特殊需求，請留言告訴我們!" name="note" id="textarea"></textarea>
                 </div>
             </div>
-            <button class="btn btn-primary btn-sm" type="button" id="subject">送出</button>
+            <button class="btn btn-primary btn-sm" type="button" id="subject" onclick="order()">送出</button>
         </form>
     </div>
 </body>

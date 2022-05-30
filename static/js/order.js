@@ -25,13 +25,16 @@ function putMemberInfo(MEMBER) {
 
 function order() {
     let url = "../php/insert_order.php";
+    let meal_date = $("input[name='meal_date']").val();
+    let meal_time= $('#inputState').val();
     let data = {
-        "start" : $("input[name='start_date']").val(),
-        "time" : "12:00",
+        "time" : `${meal_date} ${meal_time}`,
         "people" : $("input[name='people']").val(),
-        "adopt" : true,
-        "note" : "hi",
+        "seat" : "A1",
+        "adopt" : $("input[name='inlineRadioOptions']:checked").val(),
+        "note" : $("#textarea").val(),
     }
+    console.log(data);
     $.post(
         url,
         data,
@@ -44,6 +47,7 @@ function order() {
         }
     )
 }
+
 
 $(document).ready(() => {
     postMember();

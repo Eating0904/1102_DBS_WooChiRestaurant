@@ -21,6 +21,7 @@ require("../php/User.php");
 
     <script src="../static/js/pets.js"></script>
     <link rel="stylesheet" href="../static/css/pets.css">
+    <link rel="stylesheet" href="../static/css/app.css">
 </head>
 
 <body>
@@ -56,10 +57,10 @@ require("../php/User.php");
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
-                                    會員專區
+                                    會員
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="../member">會員帳號</a>
+                                    <a class="dropdown-item" href="../member">會員資料</a>
                                     <a class="dropdown-item" href="../membercontact">聯繫客服</a>
                                     <div class="dropdown-divider"></div>
                                     <a href="../php/user_logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>

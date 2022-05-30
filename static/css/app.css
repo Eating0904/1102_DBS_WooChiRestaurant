@@ -1,6 +1,22 @@
 .bg-light {
     background-color: 	#6FB7B7 !important;
 }
+.btn-primary {
+   background-color: #4a7e7e !important;
+   border-color: #ffffff !important;
+}
+.nav-link {
+    color: #ffffff !important;
+    position: relative;
+    top: 13%;
+}
+.container {
+    text-align: center;
+    background-color: #6fb7b77e;
+    padding-top: 1%;
+    margin-top: 1.5%;
+}
+
 /* .center {
     display: inline-block !important;
     text-align: center !important;

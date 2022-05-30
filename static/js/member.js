@@ -121,7 +121,7 @@ function postOrderDetail() {
     )
 }
 function postOrderId(id) {
-    let url = ""
+    let url = "../php/show_order_detail.php";
     let data = {
         "o_id" : id
     }
@@ -132,7 +132,7 @@ function postOrderId(id) {
             if (status == "success") {
                 console.log(response);
                 if (response["status"] == "success") {
-                    console.log(data);
+                    // console.log(data);
                     postOrderDetail();
                 }
                 else {

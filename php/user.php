@@ -54,7 +54,9 @@ class user {
         }
     }
     static function check() {
-        session_start();
+        if(!isset($_SESSION)) { 
+            session_start(); 
+        } 
         if (!empty($_COOKIE["token"])) {
             if (!empty($_SESSION["token"]) && $_SESSION["token"]===$_COOKIE["token"]) {
                 return true;

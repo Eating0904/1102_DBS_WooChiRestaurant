@@ -22,6 +22,7 @@ require("../php/User.php");
     
     <script src="../static/js/home.js"></script>
     <link rel="stylesheet" href="../static/css/app.css">
+    <link rel="stylesheet" href="../static/css/home.css">
 </head>
 
 <body>
@@ -57,10 +58,10 @@ require("../php/User.php");
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
-                                    會員專區
+                                    會員
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="../member">會員帳號</a>
+                                    <a class="dropdown-item" href="../member">會員資料</a>
                                     <a class="dropdown-item" href="../membercontact">聯繫客服</a>
                                     <div class="dropdown-divider"></div>
                                     <a href="../php/user_logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
@@ -83,14 +84,14 @@ require("../php/User.php");
                     <?php endif; ?>
                 <?php else: ?>
                     <!-- if未登入 -->
-                    <li class="nav-item">
+                    <li class="nav-item" >
                         <a class="nav-link" href="../register">
-                            <button class="btn btn-primary btn-sm" type="submit" >加入會員</button>
+                            <button class="btn btn-primary btn-sm" type="submit">加入會員</button>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../login">
-                            <button class="btn btn-primary btn-sm" type="submit" >登入</button>
+                            <button class="btn btn-primary btn-sm" type="submit">登入</button>
                         </a>
                     </li>
                 <?php endif; ?>
