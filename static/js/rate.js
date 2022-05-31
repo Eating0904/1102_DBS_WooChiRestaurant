@@ -109,6 +109,7 @@ function giveReply(id) {
             if (status == "success") {
                 if (response["status"] == "success") {
                     alert("回覆成功")
+                    window.location.reload();
                 }
             }
         }

@@ -52,12 +52,12 @@ function closeMemberEditBox() {
 function postNewMemberInfo() {
     let url = "../php/edit_customer.php"
     let data = {
-        // "account" : $("input[name='account']").val(),
+        "account" : $("input[name='account']").val(),
         "name" : $("input[name='name']").val(),
-        "phone" : $("input[name='phone']").val(),
+        "phone" : $("input[name='tel']").val(),
         "mail" : $("input[name='mail']").val(),
     }
-    console.log(data);
+    // console.log(data);
     $.post(
         url,
         data,
@@ -65,7 +65,7 @@ function postNewMemberInfo() {
             if (status == "success") {
                 if (response["status"] == "success") {
                     alert("變更成功");
-                    // postMember();
+                    window.location.reload();
                 }
                 else {
                     console.log(response["error"]);

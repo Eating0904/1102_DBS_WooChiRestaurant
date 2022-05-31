@@ -1,6 +1,7 @@
 <?php
 
 require("database.php");
+require("openSession.php");
 class show {
     static function customer($u_id) {
         $array = [];

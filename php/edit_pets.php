@@ -1,6 +1,7 @@
 <?php
 
 require("database.php");
+require("openSession.php");
 $response = [
     "status" => "success"
 ];

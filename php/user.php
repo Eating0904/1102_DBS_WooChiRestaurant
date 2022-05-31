@@ -22,7 +22,7 @@ class user {
     }
     static function createcookie($data) {
         foreach ($data as $key => $val) {
-            setcookie($key, $val, time()+60*5, "/", "", 0);
+            setcookie($key, $val, time()+60*60, "/", "", 0);
         }
     }
     static function login($account, $password) {

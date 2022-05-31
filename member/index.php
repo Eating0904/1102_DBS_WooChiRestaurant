@@ -148,7 +148,7 @@ require("../php/User.php");
                                 </div>
                                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="" name="mail">
                             </div>
-                            <button type="submit" class="btn btn-primary btn-sm" id="saveNewMemberInfo" onclick="closeMemberEditBox();postNewMemberInfo()">儲存變更</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="saveNewMemberInfo" onclick="closeMemberEditBox();postNewMemberInfo()">儲存變更</button>
                         </div>
                     </form>
                     <!-- 訂單紀錄 -->

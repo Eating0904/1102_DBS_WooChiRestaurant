@@ -1,6 +1,8 @@
 <?php
+
 // 顯示所有評論
 require("show.php");
+require("openSession.php");
 $response = [
     "status" => "success"
 ];
