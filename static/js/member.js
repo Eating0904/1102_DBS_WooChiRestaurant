@@ -20,6 +20,7 @@ function postMember() {
         }
     )
 }
+//顯示會員資料
 function putMemberInfo(MEMBER) {
     let member = document.getElementById("member").getElementsByTagName("span");
     member[0].textContent += `${MEMBER[1]["account"]}`;
@@ -28,32 +29,35 @@ function putMemberInfo(MEMBER) {
     member[3].textContent += `${MEMBER[0]["c_mail"]}`;
     member[4].textContent += `${MEMBER[0]["c_points"]}`;
 }
-function showMemberEditBox() {
-    // document.getElementsByClassName("cover")[0].style.display = "block";
-    document.getElementById("editmember").style.display = "block";
-}
-function closeMemberEditBox() {
-    // document.getElementsByClassName("cover")[0].style.display = "block";
-    document.getElementById("editmember").style.display = "none";
-}
+//在編輯框裡顯示會員資料
 function editMemberInfo(MEMBER) {
     let member = document.getElementById("editmember").getElementsByTagName("input");
     member[0].value = `${MEMBER[1]["account"]}`;
     member[1].value = `${MEMBER[0]["c_name"]}`;
     member[2].value = `${MEMBER[0]["c_phone"]}`;
     member[3].value = `${MEMBER[0]["c_mail"]}`;
-    let url = ""
-    data = {
-        "account" : $("input[name='account']").val(),
+}
+//顯示編輯框
+function showMemberEditBox() {
+    // document.getElementsByClassName("cover")[0].style.display = "block";
+    document.getElementById("editmember").style.display = "block";
+}
+//關閉編輯框
+function closeMemberEditBox() {
+    // document.getElementsByClassName("cover")[0].style.display = "block";
+    document.getElementById("editmember").style.display = "none";
+}
+
+//編輯會員資料
+function postNewMemberInfo() {
+    let url = "../php/edit_customer.php"
+    let data = {
+        // "account" : $("input[name='account']").val(),
         "name" : $("input[name='name']").val(),
-        "tel" : $("input[name='tel']").val(),
+        "phone" : $("input[name='phone']").val(),
         "mail" : $("input[name='mail']").val(),
     }
-    $("#saveNewMemberInfo").click(() => {
-        postNewMemberInfo(url, data);
-    })
-}
-function postNewMemberInfo(url, data) {
+    console.log(data);
     $.post(
         url,
         data,
@@ -61,7 +65,7 @@ function postNewMemberInfo(url, data) {
             if (status == "success") {
                 if (response["status"] == "success") {
                     alert("變更成功");
-                    postMember();
+                    // postMember();
                 }
                 else {
                     console.log(response["error"]);

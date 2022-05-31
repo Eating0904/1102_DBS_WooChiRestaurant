@@ -54,10 +54,29 @@ function putPets() {
             }
         }
     )
-
 }
+
+function isRestaurant() {
+    $.post(
+        "../php/identify_role.php",
+        "",
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    console.log(response);
+                    // console.log(response["data"]["u_id"]);
+                }
+                else{
+                    console.log(response);
+                }
+            }
+        }
+    )
+}
+
 
 window.onload = function() {
     putPets();
+    isRestaurant();
 
 }
