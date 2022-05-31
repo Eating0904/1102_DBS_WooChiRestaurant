@@ -1,10 +1,11 @@
 <?php
 
 require("database.php");
+require("openSession.php");
 $response = [
     "status" => "success"
 ];
-
+ 
 //$u_id = $_SESSION["u_id"];
 $u_id=1;
 $n_id=1;

@@ -128,27 +128,27 @@ require("../php/User.php");
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">帳號</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="" name="account">
                             </div>
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">姓名</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="" name="name">
                             </div>
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">連絡電話</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="" name="tel">
                             </div>
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">連絡信箱</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="">
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="" name="mail">
                             </div>
-                            <button type="submit" class="btn btn-primary btn-sm" id="saveNewMemberInfo" onclick="closeMemberEditBox()">儲存變更</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="saveNewMemberInfo" onclick="closeMemberEditBox();postNewMemberInfo()">儲存變更</button>
                         </div>
                     </form>
                     <!-- 訂單紀錄 -->

@@ -106,7 +106,10 @@ require("../php/User.php");
                 <img src="logo_tmp.jpg" class="card-img-top" alt="Image" height="300">
                 <div class="card-body">
                     <h4 class="card-title">WooChi Restaurant</h4>
-                    <p class="card-text" id="description"></p>
+                    <p class="card-text" id="description" contenteditable="true"></p>
+                    <span class="edit">
+                        <button class="btn btn-primary btn-sm" type="submit" >儲存</button>
+                    </span>
                 </div>
             </div>
         </p>
@@ -114,13 +117,17 @@ require("../php/User.php");
             <!-- 餐廳基本資訊 -->
             <div>
                 <h4>基本資料</h4>
-                <div id="restaurant">
+                <div id="restaurant" >
                     <span></span> <br>
-                    <span>地址 : </span> <br>
-                    <span>連絡電話 : </span> <br>
-                    <span>聯絡信箱 : </span> <br>
-                    <span>營業時間 : </span> <br>
+                    <span >地址 : </span> <br>
+                    <span >連絡電話 : </span> <br>
+                    <span >聯絡信箱 : </span> <br>
+                    <span >營業時間 : </span> <br>
+                    <div class="edit">
+                        <button class="btn btn-primary btn-sm" type="submit" >儲存</button>
+                    </div>
                 </div>
+                
             </div>
         </p>
         <hr>

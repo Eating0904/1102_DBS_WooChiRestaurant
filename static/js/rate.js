@@ -14,7 +14,7 @@ function postRate() {
                 console.log(response);
                 if (response["status"] == "success") {
                     let RATE = response["data"];
-                    console.log(RATE)
+                    // console.log(RATE)
                     putRate(RATE);
                 }
             }
@@ -52,17 +52,17 @@ function putRate(RATE) {
                                 <p class="card-text" name="ratecontent">${RATE[i]["content"]}</p>
                                 <p class="card-text" name="ratecontent">WooChi : ${RATE[i]["r_reply"]}</p>
                                 <!-- 店家才有 -->
-                                <button type="button" class="btn btn-primary btn-sm" id="hide-${RATE[i]["r_id"]}" onclick="showReplyBox()">回覆</button>
+                                <button type="button" class="btn btn-primary btn-sm" id="hide" onclick="showReplyBox(${RATE[i]["r_id"]})">回覆</button>
                                 <!-- 點了回覆之後 -->
-                                <div class="hide" id="hide">
+                                <div class="hide" id="hide-${RATE[i]["r_id"]}">
                                     <div class="card w-75">
                                         <div class="card-body">
                                             <h5 class="card-title" >給予回覆</h5>
                                             <p class="card-text">
-                                                <textarea class="text" placeholder="輸入回覆內容!"></textarea>   
+                                                <textarea class="text" placeholder="輸入回覆內容!" id="reply_rate"></textarea>   
                                             </p>
-                                            <button type="button" class="btn btn-primary btn-sm" onclick="closeReplyBox()">取消</button>
-                                            <button type="button" class="btn btn-primary btn-sm" onclick="closeReplyBox()">發送</button>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="closeReplyBox(${RATE[i]["r_id"]})">取消</button>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="closeReplyBox(${RATE[i]["r_id"]});giveReply(${RATE[i]["r_id"]})">發送</button>
                                         </div>
                                     </div>
                                 </div>
@@ -73,11 +73,51 @@ function putRate(RATE) {
             function() {
                 $(`#star-${RATE[i]["score"]}-${i}`).prop("checked", true)
             },
-            1
         );
     }
-
 }
+function giveRate() {
+    let url = "../php/insert_rate.php";
+    let data = {
+        "star" : $('input[name=star]:checked').val(),
+        "content" : $("#giveContent").val()
+    }
+    // console.log(data);
+    $.post(
+        url,
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    alert("評論成功")
+                }
+            }
+        }
+    )
+}
+
+function giveReply(id) {
+    let url = "../php/reply_rate.php";
+    let data = {
+        "r_id" : id,
+        "content" : $("#reply_rate").val()
+    }
+    $.post(
+        url,
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    alert("回覆成功")
+                    window.location.reload();
+                }
+            }
+        }
+    )
+}
+
+
+
 function showRateBox() {
     // document.getElementsByClassName("cover")[0].style.display = "block";
     document.getElementsByClassName("hide")[0].style.display = "block";
@@ -91,12 +131,15 @@ function showReplyBox(id) {
     // document.getElementsByClassName("cover")[0].style.display = "block";
     document.getElementById(`hide-${id}`).style.display = "block";
 }
-function closeReplyBox() {
+function closeReplyBox(id) {
     // document.getElementsByClassName("cover")[0].style.display = "none";
     document.getElementById(`hide-${id}`).style.display = "none";
 }
 
 window.onload = function() {
     postRate();
-
+    $("#giveRate").click(() => {
+        // console.log("click");
+        giveRate();
+    })
 }

@@ -1,10 +1,10 @@
 <?php 
 
 require("database.php");
+require("openSession.php");
 $response = [
     "status" => "fail"
 ];
-
 // !empty($_REQUEST["name"]) && !empty($_REQUEST["phone"])&& 
 //     !empty($_REQUEST["email"])&& !empty($_REQUEST["start"]) && 
 //     !empty($_REQUEST["time"]) && !empty($_REQUEST["people"])&& 

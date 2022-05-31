@@ -1,6 +1,7 @@
 <?php
 //會員新增評論
 require("database.php");
+require("openSession.php");
 $response = [
     "status" => "fail",
 ];
