@@ -89,7 +89,8 @@ function giveRate() {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
-                    alert("評論成功")
+                    alert("評論成功");
+                    window.location.reload();
                 }
             }
         }

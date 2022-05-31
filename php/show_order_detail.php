@@ -7,7 +7,8 @@ $response = [
 $array=[];
 
 $o_id=1;
-$u_id=$_SESSION["u_id"];
+
+$u_id=$_SESSION["id"];
 
 if( $row=show::customer($u_id) ) {
     $response["data_customer"] = $row ;

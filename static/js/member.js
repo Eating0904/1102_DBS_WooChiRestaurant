@@ -10,7 +10,6 @@ function postMember() {
         "",
         (response, status) => {
             if (status == "success") {
-                console.log(response);
                 if (response["status"] == "success") {
                     let MEMBER = response["data"];
                     putMemberInfo(MEMBER);
@@ -82,7 +81,6 @@ function postOrder() {
         "",
         (response, status) => {
             if (status == "success") {
-                console.log(response);
                 if (response["status"] == "success") {
                     let ORDERS = response['data_order']
                     //console.log(ORDERS);
@@ -92,7 +90,16 @@ function postOrder() {
         }
     )
 }
-
+//顯示詳細資訊
+function showOrderDetail() {
+    // document.getElementsByClassName("cover")[0].style.display = "block";
+    document.getElementById("orderDetail").style.display = "block";
+}
+//關閉詳細資訊
+function closeOrderDetail() {
+    // document.getElementsByClassName("cover")[0].style.display = "block";
+    document.getElementById("orderDetail").style.display = "none";
+}
 function putOrderList(ORDERS) {
     let list = document.getElementById("orderlist");
     for(let i=0; i<ORDERS.length; i++) {
@@ -101,7 +108,7 @@ function putOrderList(ORDERS) {
                         <td>${i+1}</td> 
                         <td>${ORDERS[i]['meal_time']}</td>
                         <td>
-                            <button type="button" class="btn btn-primary btn-sm" id="orderDetail-${ORDERS[i]['o_id']}" onclick="postOrderId(${ORDERS[i]['o_id']})">詳細資料</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="orderDetail-${ORDERS[i]['o_id']}" onclick="showOrderDetail();postOrderId(${ORDERS[i]['o_id']})">詳細資料</button>
                         </td>   
                     </tr>        
                     `
@@ -114,11 +121,9 @@ function postOrderDetail() {
         "",
         (response, status) => {
             if (status == "success") {
-                console.log(response);
                 if (response["status"] == "success") {
-                    // let ORDERDETAIL = response
-                    // //console.log(ORDERDETAIL);
-                    // putOrderDetail(ORDERDETAIL);
+                    let ORDERDETAIL = response
+                    putOrderDetail(ORDERDETAIL);
                 }
             }
         }
@@ -134,9 +139,7 @@ function postOrderId(id) {
         data,
         (response, status) => {
             if (status == "success") {
-                console.log(response);
                 if (response["status"] == "success") {
-                    // console.log(data);
                     postOrderDetail();
                 }
                 else {
@@ -146,24 +149,26 @@ function postOrderId(id) {
         }
     ) 
 }
-function putOrderDetail(){
+function putOrderDetail(ORDERDETAIL){
+    
+    // console.log(ORDERDETAIL);
+    let datacustomer = ORDERDETAIL["data_customer"][0];
+    let dataorder = ORDERDETAIL["data_order"][0];
     let orderdetail = document.getElementById("orderDetail");
     let orderdetailmember = orderdetail.getElementsByTagName("h5")[0];
-    orderdetailmember.innerHTML += `顧客姓名&emsp;2022-05-08&emsp;14:00`;
-
+    orderdetailmember.innerHTML = `#&emsp;${dataorder["meal_time"]}`;
+    
     let orderdetailcontent = orderdetail.getElementsByTagName("span");
-    orderdetailcontent[0].textContent += `用餐人數`;
-    orderdetailcontent[1].textContent += `用餐區域`;
-    orderdetailcontent[2].textContent += `領養意願`;
-    orderdetailcontent[3].textContent += `備註`;
-    orderdetailcontent[4].textContent += `連絡電話`;
-    orderdetailcontent[5].textContent += `聯絡信箱`;
-
+    orderdetailcontent[0].innerHTML = `用餐人數 : ${dataorder["num_of_people"]}`;
+    orderdetailcontent[1].innerHTML = `用餐區域 : ${dataorder["seat"]}`;
+    orderdetailcontent[2].innerHTML = `領養意願 : ${dataorder["adoption"]}`;
+    orderdetailcontent[3].innerHTML = `備註 : ${dataorder["note"]}`;
+    orderdetailcontent[4].innerHTML = `聯絡電話 : ${datacustomer["c_phone"]}`;
+    orderdetailcontent[5].innerHTML = `聯絡信箱 : ${datacustomer["c_mail"]}`;
 }
 
 
 window.onload = function() {
     postMember();
     postOrder();
-    putOrderDetail();
 }

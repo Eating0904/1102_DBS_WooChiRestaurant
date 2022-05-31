@@ -172,18 +172,19 @@ require("../php/User.php");
                                 </p>
                                 <p class="card-text">
                                     <p>
-                                        <span>用餐人數 : </span><br>
-                                        <span>用餐區域 : </span><br>
-                                        <span>領養意願 : </span><br>
-                                        <span>備註 : </span><br>
+                                        <span></span><br>
+                                        <span></span><br>
+                                        <span></span><br>
+                                        <span></span><br>
                                     </p>
                                     <p>
-                                        <span>聯絡電話 : </span><br>
-                                        <span>聯絡信箱 : </span><br>
+                                        <span></span><br>
+                                        <span></span><br>
                                     </p>
                                 </p>
                                 <a href="#" class="btn btn-primary btn-sm">編輯</a>
                                 <button type="button" class="btn btn-primary btn-sm">刪除</button>
+                                <button type="button" class="btn btn-primary btn-sm" id="closedetail"onclick="closeOrderDetail()">關閉</button>
                             </div>
                         </div>
                     </div>
