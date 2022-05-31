@@ -115,20 +115,7 @@ function putOrderList(ORDERS) {
         list.innerHTML += text;
     }
 }
-function postOrderDetail() {
-    $.post(
-        "../php/show_order_detail.php",
-        "",
-        (response, status) => {
-            if (status == "success") {
-                if (response["status"] == "success") {
-                    let ORDERDETAIL = response
-                    putOrderDetail(ORDERDETAIL);
-                }
-            }
-        }
-    )
-}
+
 function postOrderId(id) {
     let url = "../php/show_order_detail.php";
     let data = {
@@ -140,7 +127,8 @@ function postOrderId(id) {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
-                    postOrderDetail();
+                    let ORDERDETAIL = response
+                    putOrderDetail(ORDERDETAIL);
                 }
                 else {
                     console.log(response["error"]);

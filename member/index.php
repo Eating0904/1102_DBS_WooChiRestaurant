@@ -1,6 +1,9 @@
 <?php
 
 require("../php/User.php");
+if (!user::check()) {
+    header("Location: ../");
+}
 
 ?>
 

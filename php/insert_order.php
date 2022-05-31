@@ -35,6 +35,9 @@ if(
         VALUES
         ('$u_id', '$time', '$people', '$seat', '$adopt', '$note')";
     $result = database::$conn->query($sql);
+    $sql = "UPDATE customer SET c_points=c_points+50 WHERE u_id=$u_id";
+    $result = database::$conn->query($sql);
+    
     if ($result) {
         $response["status"] = "success";
     }

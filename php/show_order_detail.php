@@ -6,9 +6,8 @@ $response = [
 ];
 $array=[];
 
-$o_id=1;
-
-$u_id=$_SESSION["id"];
+$u_id = $_SESSION["id"];
+$o_id = $_REQUEST["o_id"];
 
 if( $row=show::customer($u_id) ) {
     $response["data_customer"] = $row ;

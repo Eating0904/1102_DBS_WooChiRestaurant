@@ -15,6 +15,7 @@
     
     <script src="../static/js/login.js"></script>
     <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="../static/css/app.css">
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
