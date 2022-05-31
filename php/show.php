@@ -101,20 +101,24 @@ class show {
             $sql_2 = " select r_id,score,r_date,r_content,r_reply from rate WHERE u_id = '$u_id'; ";
             $result_2 =  database::$conn->query($sql_2);// or die("select error");
             
-            $row_2 =  $result_2->fetch_array(MYSQLI_ASSOC);
-            $temp=[
-                "name" => $name,
-                "r_id" => $row_2["r_id"],
-                "score" => $row_2["score"],
-                "date" => $row_2["r_date"],
-                "content" => $row_2["r_content"],
-                "r_reply" => $row_2["r_reply"]
-            ];
-            array_push($array,$temp); 
+
+            while( $row_2 =  $result_2->fetch_array(MYSQLI_ASSOC) ){
+                $temp=[
+                    "name" => $name,
+                    "r_id" => $row_2["r_id"],
+                    "score" => $row_2["score"],
+                    "date" => $row_2["r_date"],
+                    "content" => $row_2["r_content"],
+                    "r_reply" => $row_2["r_reply"]
+                ];
+                array_push($array,$temp); 
+            }
             
             
+            
+            return $array ;
         }
-        return $array ;
+       
     }
     static function order($u_id,$array) {
         $sql = " SELECT o_id,meal_time FROM orders WHERE u_id='$u_id' order by meal_time DESC;";

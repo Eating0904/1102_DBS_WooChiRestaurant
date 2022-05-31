@@ -11,7 +11,7 @@ $n_id=1;
 $content = $_REQUEST["content"];
 
 if($u_id==1){
-    $sql=" UPDATE news SET n_information='$content' WHERE n_id = '$n_id';";
+    $sql=" UPDATE menu SET n_information='$content' WHERE n_id = '$n_id';";
     $result =  database::$conn->query($sql);// or die("select error");
     if( $result ) $response["status"] = "success";
 
