@@ -53,7 +53,7 @@ function putRate(RATE) {
                                     <p class="card-text" name="ratecontent">${RATE[i]["content"]}</p>
                                     <p class="card-text" name="ratecontent">WooChi : ${RATE[i]["r_reply"]}</p>
                                     <!-- 店家才有 -->
-                                    <button type="button" class="btn btn-primary btn-sm" onclick="showReplyBox(${RATE[i]["r_id"]})">回覆</button>
+                                    <button type="button" class="btn btn-primary btn-sm hide-r" onclick="showReplyBox(${RATE[i]["r_id"]})">回覆</button>
                                     <!-- 點了回覆之後 -->
                                     <div class="hide" id="hide-${RATE[i]["r_id"]}">
                                         <div class="card w-75">
@@ -146,13 +146,25 @@ function isRestaurant() {
                 // console.log(response);
                 if (response["status"] == "success") {
                     let u_id = response["u_id"];
-                    if (u_id == "1") {
-                        console.log("yes");
-                        document.getElementById("onlyRestaurant").style.display = "none";
+                    if (u_id != "1") {
+                        setTimeout(
+                            function() {
+                                $(".hide-r").css("display","none");
+                            },
+                            100
+                        );
+                    }
+                    else {
+                        console.log("restaurant");
                     }
                 }
                 else {
-                    // console.log(response);
+                    setTimeout(
+                        function() {
+                            $(".hide-r").css("display","none");
+                        },
+                        100
+                    );
                 }
             }
         }

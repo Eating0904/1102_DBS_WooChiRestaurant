@@ -17,3 +17,7 @@
 .nav-pills .nav-link.active {
     background-color: rgb(47, 138, 138);
 }
+
+.card-body {
+    text-align: left;
+}
