@@ -8,11 +8,11 @@ $response = [
 
 $u_id = $_SESSION["u_id"];
 
-$n_id=1;
+$i_id=1;
 $content = $_REQUEST["content"];
 
 if($u_id==1){
-    $sql=" UPDATE menu SET n_information='$content' WHERE n_id = '$n_id';";
+    $sql=" UPDATE images SET image='$content' WHERE i_id = '$i_id';";
     $result =  database::$conn->query($sql);// or die("select error");
     if( $result ) $response["status"] = "success";
 

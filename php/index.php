@@ -123,6 +123,9 @@
 	<input type="submit" value="user_id">
 </form> 
 
+<form name="" method="post" action="search_order.php" >
+	<input type="text" name="content" placeholder="ID/name">
+</form> 
 
 
 <?php	
