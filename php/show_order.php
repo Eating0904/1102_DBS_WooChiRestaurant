@@ -8,7 +8,7 @@ $response = [
 $array=[];
 
 
-$u_id=$_SESSION["u_id"];
+$u_id=$_SESSION["id"];
 
 if( $row=show::order($u_id,$array) ) {
     $response["status"] = "success";

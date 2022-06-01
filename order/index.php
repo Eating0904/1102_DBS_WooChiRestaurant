@@ -1,6 +1,9 @@
 <?php
 
 require("../php/User.php");
+if (!user::check()) {
+    header("Location: ../");
+}
 
 ?>
 
@@ -39,7 +42,7 @@ require("../php/User.php");
     <script src="../static/js/base.js"></script>
     <script src="../static/js/order.js"></script>
     <link rel="stylesheet" href="../static/css/order.css">
-    <!-- <link rel="stylesheet" href="../static/css/app.css"> -->
+    <link rel="stylesheet" href="../static/css/app.css">
 
 
 </head>
@@ -130,7 +133,7 @@ require("../php/User.php");
             <small class="text-muted"> *若要更改，請至「會員專區」 -> 「會員專區」 修改 </small>
         </div>
         <form>
-            <div>
+            <div class="center">
                 <h5>訂位資訊</h5>
                 <form>
                     <div class="form-group col-md-3">

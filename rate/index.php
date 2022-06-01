@@ -24,7 +24,7 @@ require("../php/User.php");
 
     <script src="../static/js/rate.js"></script>
     <link rel="stylesheet" href="../static/css/rate.css">
-    <!-- <link rel="stylesheet" href="../static/css/app.css"> -->
+    <link rel="stylesheet" href="../static/css/app.css">
 </head>
 
 
@@ -113,14 +113,14 @@ require("../php/User.php");
                         <button type="button" class="btn btn-primary btn-sm" onclick="showRateBox()">我要評價</button>
                     </div>
                     <div class="hide">
-                        <div class="card w-50">
+                        <div class="card w-50" id="rate">
                             <div class="card-body">
                                 <h5 class="card-title">給予評分</h5>
                                 <p class="card-text">
-                                    <div class="container d-flex justify-content-center mt-200">
+                                    <div class=" d-flex justify-content-center mt-200">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div class="stars">
+                                                <div class="stars" id="test">
                                                     <form action="">
                                                         <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
                                                         <label class="star star-5" for="star-5"></label>

@@ -1,10 +1,16 @@
+#onlyRestaurant {
+    display: block;
+}
 textarea {
     width: 400px;
     height: 100px;
     resize: none;
 }
 
-.hide{
+/* .hide-r{
+    display: block;
+} */
+.hide {
     display: none;
 }
 
@@ -13,8 +19,9 @@ textarea {
 } */
 
 div.stars {
-  width: 270px;
+  width: 100%;
   display: inline-block;
+  background-color: white;
 }
 
 /* .mt-200 {
@@ -55,4 +62,19 @@ label.star:hover {
 label.star:before {
     content: '\f006';
     font-family: FontAwesome;
+}
+#rateContent {
+    margin-left: 12.5%;
+    margin-top: 2.5%;
+    width: 100%;
+    text-align: left !important;
+}
+#rate {
+    margin-left: 25%;
+    margin-top: 2.5%;
+    width: 100%;
+}
+.col-md-12 {
+    
+    padding: auto !important;
 }

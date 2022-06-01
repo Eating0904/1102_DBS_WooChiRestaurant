@@ -107,9 +107,13 @@ require("../php/User.php");
                 <div class="card-body">
                     <h4 class="card-title">WooChi Restaurant</h4>
                     <p class="card-text" id="description" contenteditable="true"></p>
-                    <span class="edit">
-                        <button class="btn btn-primary btn-sm" type="submit" >儲存</button>
-                    </span>
+                    <?php if(User::check()): ?>
+                        <?php if($_COOKIE["id"] == "1"): ?>
+                            <span class="edit">
+                                <button class="btn btn-primary btn-sm" type="submit" >儲存</button>
+                            </span>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </p>
@@ -123,9 +127,13 @@ require("../php/User.php");
                     <span >連絡電話 : </span> <br>
                     <span >聯絡信箱 : </span> <br>
                     <span >營業時間 : </span> <br>
-                    <div class="edit">
-                        <button class="btn btn-primary btn-sm" type="submit" >儲存</button>
-                    </div>
+                    <?php if(User::check()): ?>
+                        <?php if($_COOKIE["id"] == "1"): ?>
+                            <span class="edit">
+                                <button class="btn btn-primary btn-sm" type="submit" >儲存</button>
+                            </span>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
                 
             </div>

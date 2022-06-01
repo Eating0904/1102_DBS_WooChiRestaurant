@@ -25,7 +25,7 @@ require("../php/User.php");
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../home">
             <img src="../logo.png" width="30" height="30" alt="Image">
             WooChi

@@ -91,26 +91,18 @@ class show {
 
         while( $row =  $result->fetch_array(MYSQLI_ASSOC)  ){
             $u_id = $row["u_id"];
-
-            $sql_1 = " select c_name from customer WHERE u_id = '$u_id'; ";
-            $result_1 =  database::$conn->query($sql_1);// or die("select error");
-            $row_1 =  $result_1->fetch_array(MYSQLI_ASSOC);
-            $name = $row_1["c_name"];
-        
+            $sql = "SELECT * FROM customer, rate WHERE customer.u_id=rate.u_id ORDER BY r_date DESC";
+            $result =  database::$conn->query($sql);// or die("select error");
             
 
-            $sql_2 = " select r_id,score,r_date,r_content,r_reply from rate WHERE u_id = '$u_id'; ";
-            $result_2 =  database::$conn->query($sql_2);// or die("select error");
-            
-
-            while( $row_2 =  $result_2->fetch_array(MYSQLI_ASSOC) ){
+            while($row =  $result->fetch_array(MYSQLI_ASSOC)){
                 $temp=[
-                    "name" => $name,
-                    "r_id" => $row_2["r_id"],
-                    "score" => $row_2["score"],
-                    "date" => $row_2["r_date"],
-                    "content" => $row_2["r_content"],
-                    "r_reply" => $row_2["r_reply"]
+                    "name" => $row["c_name"],
+                    "r_id" => $row["r_id"],
+                    "score" => $row["score"],
+                    "date" => $row["r_date"],
+                    "content" => $row["r_content"],
+                    "r_reply" => $row["r_reply"]
                 ];
                 array_push($array,$temp); 
             }

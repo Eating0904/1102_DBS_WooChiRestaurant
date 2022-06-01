@@ -19,5 +19,6 @@ if(!empty($result)){
     $response["status"] = "success";
 }
 
+header('Content-Type: application/json; charset=utf-8');
 echo json_encode($response,JSON_UNESCAPED_UNICODE);
 ?>

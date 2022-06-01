@@ -62,12 +62,13 @@ function isRestaurant() {
         "",
         (response, status) => {
             if (status == "success") {
+                console.log(response);
                 if (response["status"] == "success") {
-                    console.log(response);
+                    // console.log(response);
                     // console.log(response["data"]["u_id"]);
                 }
-                else{
-                    console.log(response);
+                else {
+                    // console.log(response);
                 }
             }
         }
