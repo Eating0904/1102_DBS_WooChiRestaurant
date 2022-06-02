@@ -1,0 +1,14 @@
+#orderDetail{
+    display: none;
+}
+.window {
+    border: solid 2px #000000;
+    background-color: #d2eaea;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    display: none;
+}
+#hide {
+    display: none;
+}

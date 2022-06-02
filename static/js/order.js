@@ -41,7 +41,11 @@ function order() {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
-                    // fun___(response["data"])
+                    alert("已成功收到您的訂單，到時見~");
+                    window.location.href = "../member";
+                }
+                else {
+                    alert("請確認所有資料皆已填寫");
                 }
             }
         }

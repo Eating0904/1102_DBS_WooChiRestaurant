@@ -20,6 +20,7 @@ require("../php/User.php");
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+
     <script src="../static/js/home.js"></script>
     <!-- <script src="../static/js/base.js"></script> -->
     <link rel="stylesheet" href="../static/css/app.css">
@@ -158,6 +159,4 @@ require("../php/User.php");
 
 
 </body>
-
-
 </html>

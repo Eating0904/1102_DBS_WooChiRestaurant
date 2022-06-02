@@ -22,7 +22,9 @@ if (!user::check()) {
     
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    
+    <script src="../static/js/search.js"></script>
+    <link rel="stylesheet" href="../static/css/search.css">
     <!-- <link rel="stylesheet" href="../static/css/app.css"> -->
 </head>
 <body>
@@ -97,8 +99,7 @@ if (!user::check()) {
         </div>
     </nav>
 
-    <!-- <div class="container"> -->
-        <div class="row">
+    <div class="row">
         <div class="col-2">
             <h3>後臺管理</h3>
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -106,25 +107,57 @@ if (!user::check()) {
                 <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">查詢訂單紀錄</a>
             </div>
         </div>
-            <div class="col-10">
-                <div class="tab-content" id="v-pills-tabContent">
-                <!-- 查詢會員資料 -->
-                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <div class="col-10">
+            <div class="tab-content" id="v-pills-tabContent">
+            <!-- 查詢會員資料 -->
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
+            </div>
+            <!-- 查詢訂單紀錄 -->
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <div class="form-group">
+                    <h4>查詢訂單紀錄</h4>
+                    <input type="text" class="form-control" placeholder="請輸入ID或姓名..." name="searchOrder">
+                    <button type="button"class="btn btn-primary btn-sm" onclick="searchOrder()">查詢</button>
                 </div>
-                <!-- 查詢訂單紀錄 -->
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                    <h4>訂單紀錄</h4>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="請輸入編號或姓名" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">查詢</button>
+                <!-- 當日、某會員的所有訂單內容 -->
+                <div id="hide">
+                    <div class="table-center">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th scope="col">用餐日期及時間</th>
+                                    <th scope="col">姓名</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="orderlist"></tbody>
+                        </table>
+                    </div>    
+                    <!-- 當按下詳細資料 -->
+                    <div class="card w-50 window">
+                        <div class="card-body" id="orderDetail">
+                            <p>
+                                <h5 class="card-title"></h5>
+                            </p>
+                            <p class="card-text">
+                                <p>
+                                    <span></span><br>
+                                    <span></span><br>
+                                    <span></span><br>
+                                    <span></span><br>
+                                </p>
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm">編輯</a>
+                            <button type="button" class="btn btn-primary btn-sm">刪除</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="closedetail"onclick="closeOrderDetail()">關閉</button>
                         </div>
                     </div>
-                </div>
+                </div>    
             </div>
         </div>
-    <!-- </div> -->
+    </div>
     
 </body>
 </html>
