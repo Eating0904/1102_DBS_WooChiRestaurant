@@ -124,9 +124,12 @@
 </form> 
 
 <form name="" method="post" action="search_order.php" >
-	<input type="text" name="content" placeholder="ID/name">
+	<input type="text" name="content" placeholder="ID/name/date">
 </form> 
 
+<form name="" method="post" action="search_member.php" >
+	<input type="text" name="content" placeholder="uid/name">
+</form> 
 
 <?php	
 	$dbhost = '127.0.0.1';
