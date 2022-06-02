@@ -25,7 +25,7 @@ if (!user::check()) {
 
     <script src="../static/js/member.js"></script>
     <link rel="stylesheet" href="../static/css/member.css">
-    <!-- <link rel="stylesheet" href="../static/css/app.css"> -->
+    <link rel="stylesheet" href="../static/css/app.css">
 
 </head>
 <body>
@@ -64,8 +64,7 @@ if (!user::check()) {
                                     會員
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="../member">會員資料</a>
-                                    <a class="dropdown-item" href="../membercontact">聯繫客服</a>
+                                    <a class="dropdown-item" href="../member">資料&訂單</a>
                                     <div class="dropdown-divider"></div>
                                     <a href="../php/user_logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
                                 </div>
@@ -77,8 +76,7 @@ if (!user::check()) {
                                     後台管理
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="../search">查尋會員&訂單</a>
-                                    <a class="dropdown-item" href="../restaurantcontact">回覆客服</a>
+                                    <a class="dropdown-item" href="../search">會員&訂單</a>
                                     <div class="dropdown-divider"></div>
                                     <a href="../php/user_logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
                                 </div>
@@ -102,7 +100,7 @@ if (!user::check()) {
         </div>
     </nav>
 
-    
+    <div class="cover" onclick="closeOrderDetail()"></div>
     <div class="row">
         <div class="col-2">
             <h3>會員專區</h3>
@@ -115,15 +113,18 @@ if (!user::check()) {
             <div class="tab-content" id="v-pills-tabContent">
                 <!-- 基本資料 -->
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="center">
                     <h4>會員資料</h4>
+                </div>    
                     <div id="member">
                         <span name="account">帳號 : </span><br>
                         <span name="name">姓名 : </span><br>
                         <span  name="tel">連絡電話 : </span><br>
                         <span  name="mail">聯絡信箱 : </span><br>
-                        <button type="button" class="btn btn-primary btn-sm" onclick="showMemberEditBox()">編輯</button>
-                        <hr>
                         <span>會員點數 : </span><br>
+                    </div>
+                    <div class="center">
+                        <button type="button" class="btn btn-primary btn-sm" onclick="showMemberEditBox()">編輯</button>  
                     </div>
                     <!-- 當按下編輯按鈕 -->
                     <form id="editmember">
@@ -151,12 +152,16 @@ if (!user::check()) {
                                 </div>
                                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="" name="mail">
                             </div>
+                            <button type="button" class="btn btn-primary btn-sm" onclick="closeMemberEditBox()">取消</button>
                             <button type="button" class="btn btn-primary btn-sm" id="saveNewMemberInfo" onclick="closeMemberEditBox();postNewMemberInfo()">儲存變更</button>
                         </div>
                     </form>
                     <!-- 訂單紀錄 -->
                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <div class="center">
                         <h4>訂單紀錄</h4>
+                    </div>
+                    <div class="table-center">
                         <table class="table table-sm">
                             <thead>
                                 <tr>
@@ -167,8 +172,9 @@ if (!user::check()) {
                             </thead>
                             <tbody id="orderlist"></tbody>
                         </table>
+                    </div>    
                         <!-- 當按下詳細資料 -->
-                        <div class="card w-50">
+                        <div class="card w-50 window">
                             <div class="card-body" id="orderDetail">
                                 <p>
                                     <h5 class="card-title"></h5>

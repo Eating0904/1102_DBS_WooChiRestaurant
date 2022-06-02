@@ -38,13 +38,11 @@ function editMemberInfo(MEMBER) {
 }
 //顯示編輯框
 function showMemberEditBox() {
-    // document.getElementsByClassName("cover")[0].style.display = "block";
-    document.getElementById("editmember").style.display = "block";
+    document.getElementById("editmember").style.visibility = "visible";
 }
 //關閉編輯框
 function closeMemberEditBox() {
-    // document.getElementsByClassName("cover")[0].style.display = "block";
-    document.getElementById("editmember").style.display = "none";
+    document.getElementById("editmember").style.visibility = "hidden";
 }
 
 //編輯會員資料
@@ -92,13 +90,15 @@ function postOrder() {
 }
 //顯示詳細資訊
 function showOrderDetail() {
-    // document.getElementsByClassName("cover")[0].style.display = "block";
+    document.getElementsByClassName("cover")[0].style.display = "block";
     document.getElementById("orderDetail").style.display = "block";
+    document.getElementsByClassName("window")[0].style.display = "block";
 }
 //關閉詳細資訊
 function closeOrderDetail() {
-    // document.getElementsByClassName("cover")[0].style.display = "block";
+    document.getElementsByClassName("cover")[0].style.display = "none";
     document.getElementById("orderDetail").style.display = "none";
+    document.getElementsByClassName("window")[0].style.display = "none";
 }
 function putOrderList(ORDERS) {
     let list = document.getElementById("orderlist");
@@ -159,4 +159,6 @@ function putOrderDetail(ORDERDETAIL){
 window.onload = function() {
     postMember();
     postOrder();
+    $(".row").outerHeight($("html").outerHeight() - $("nav").outerHeight());
+
 }

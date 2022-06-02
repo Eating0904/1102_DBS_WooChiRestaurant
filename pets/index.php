@@ -60,8 +60,7 @@ require("../php/User.php");
                                     會員
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="../member">會員資料</a>
-                                    <a class="dropdown-item" href="../membercontact">聯繫客服</a>
+                                    <a class="dropdown-item" href="../member">資料&訂單</a>
                                     <div class="dropdown-divider"></div>
                                     <a href="../php/user_logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
                                 </div>
@@ -73,8 +72,7 @@ require("../php/User.php");
                                     後台管理
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="../search">查尋會員&訂單</a>
-                                    <a class="dropdown-item" href="../restaurantcontact">回覆客服</a>
+                                    <a class="dropdown-item" href="../search">會員&訂單</a>
                                     <div class="dropdown-divider"></div>
                                     <a href="../php/user_logout.php" class="btn btn-primary btn-sm" type="submit">登出</a>
                                 </div>
@@ -97,7 +95,6 @@ require("../php/User.php");
             </ul>
         </div>
     </nav>
-
 
     <div class="container">
         <h3>店內寵物資訊</h3>
