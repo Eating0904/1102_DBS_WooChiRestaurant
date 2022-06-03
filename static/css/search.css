@@ -12,3 +12,53 @@
 #hide {
     display: none;
 }
+#member {
+    text-align: left;
+    visibility: hidden;
+    padding: 2.5%;
+    margin-left: 25%;
+    width: 50%;
+    border: solid 2px #2e7878;
+}
+#orderdetailbyid {
+    display: none;
+    text-align: left;
+    padding: 2.5%;
+    margin-left: 25%;
+    width: 50%;
+    border: solid 2px #2e7878;
+}
+#v-pills-home-tab {
+    color: #2e7878 !important;
+}
+#v-pills-messages-tab {
+    color: #2e7878 !important;
+}
+.center {
+    text-align: center;
+    padding-top: 2.5%;
+    padding-bottom: 0.5%;
+}
+.col-2 {
+    background-color: #b7e7e7;
+    text-align: center;
+    padding-top: 0.5%;
+}
+.form-control {
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
+}
+.table td {
+    vertical-align: middle;
+}
+.table {
+    width: 50%;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #7bdbdbba;
+    border: solid 1.5px  #2e7878;
+    margin-left: 10%;
+}

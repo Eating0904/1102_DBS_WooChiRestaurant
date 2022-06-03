@@ -1,8 +1,8 @@
-function searchOrder() {
+function searchMember() {
     // console.log("click")
-    url = "../php/search_order.php";
+    url = "../php/search_member.php";
     data = {
-        "content" : $("input[name='searchOrder']").val(),
+        "content" : $("input[name='searchMember']").val(),
     }
     console.log(data)
     $.post(
@@ -11,13 +11,55 @@ function searchOrder() {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
-                    if(response["type"]="name") {
-                        // console.log(response);
+                    $("#member").css("visibility","visible");
+                    putMember(response["data"][0]);
+                }
+                else {
+                    alert("查無此會員");
+                }
+            }
+        }
+    )
+}
+
+function putMember(MEMBER) {
+    console.log(MEMBER);
+    let member = document.getElementById("member").getElementsByTagName("span");
+    member[0].textContent = `姓名 : ${MEMBER["c_name"]}`;
+    member[1].textContent = `電話 : ${MEMBER["c_phone"]}`;
+    member[2].textContent = `信箱 : ${MEMBER["c_mail"]}`;
+    member[3].textContent = `點數 : ${MEMBER["c_points"]} pt`;
+    
+}
+
+
+function searchOrder() {
+    // console.log("click")
+    url = "../php/search_order.php";
+    data = {
+        "content" : $("input[name='searchOrder']").val(),
+    }
+    $.post(
+        url,
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    if(response["type"] == "name") {
+                        $("#orderdetailbyid").css("display","none");
                         $("#hide").css("display","block");
                         putOrderList(response["data_order"]);
                     }
-                    else if (response["type"]="ID"){
-                        console.log(response);
+                    else if(response["type"] == "date") {
+                        $("#orderdetailbyid").css("display","none");
+                        $("#hide").css("display","block");
+                        putOrderList(response["data_order"]);
+                    }
+                    else if(response["type"] == "ID") {
+                        // console.log(response)
+                        $("#hide").css("display","none");
+                        $("#orderdetailbyid").css("display","block");
+                        putOrderDetailById(response["data_order"][0]);
                     }
                 }
                 else {
@@ -66,9 +108,8 @@ function postOrderId(id) {
     ) 
 }
 function putOrderDetail(ORDERDETAIL){
-    
     // console.log(ORDERDETAIL);
-    let datacustomer = ORDERDETAIL["data_customer"][0];
+    
     let dataorder = ORDERDETAIL["data_order"][0];
     let orderdetail = document.getElementById("orderDetail");
     let orderdetailmember = orderdetail.getElementsByTagName("h5")[0];
@@ -79,6 +120,22 @@ function putOrderDetail(ORDERDETAIL){
     orderdetailcontent[1].innerHTML = `用餐區域 : ${dataorder["seat"]}`;
     orderdetailcontent[2].innerHTML = `領養意願 : ${dataorder["adoption"]}`;
     orderdetailcontent[3].innerHTML = `備註 : ${dataorder["note"]}`;
+}
+
+function putOrderDetailById(ORDERDETAILBYID) {
+    // console.log(ORDERDETAILBYID);
+
+    let dataorder = ORDERDETAILBYID;
+    let orderdetail = document.getElementById("orderdetailbyid").getElementsByTagName("span");
+    
+    orderdetail[0].innerHTML = `姓名 : ${dataorder["c_name"]}`;
+    orderdetail[1].innerHTML = `時間 : ${dataorder["meal_time"]}`;
+    orderdetail[2].innerHTML = `用餐人數 : ${dataorder["num_of_people"]}`;
+    orderdetail[3].innerHTML = `用餐區域 : ${dataorder["seat"]}`;
+    orderdetail[4].innerHTML = `領養意願 : ${dataorder["adoption"]}`;
+    orderdetail[5].innerHTML = `備註 : ${dataorder["note"]}`;
+    orderdetail[6].innerHTML = `連絡電話 : ${dataorder["c_phone"]}`;
+    orderdetail[7].innerHTML = `聯絡信箱 : ${dataorder["c_mail"]}`;
 }
 
 //顯示詳細資訊
@@ -92,4 +149,9 @@ function closeOrderDetail() {
     // document.getElementsByClassName("cover")[0].style.display = "none";
     document.getElementById("orderDetail").style.display = "none";
     document.getElementsByClassName("window")[0].style.display = "none";
+}
+
+window.onload = function() {
+    $(".row").outerHeight($("html").outerHeight() - $("nav").outerHeight());
+
 }

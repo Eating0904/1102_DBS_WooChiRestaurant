@@ -21,3 +21,6 @@
 .card-body {
     text-align: left;
 }
+.card {
+    border: solid;
+}

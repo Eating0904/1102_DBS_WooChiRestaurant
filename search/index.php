@@ -25,7 +25,7 @@ if (!user::check()) {
     
     <script src="../static/js/search.js"></script>
     <link rel="stylesheet" href="../static/css/search.css">
-    <!-- <link rel="stylesheet" href="../static/css/app.css"> -->
+    <link rel="stylesheet" href="../static/css/app.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -111,13 +111,24 @@ if (!user::check()) {
             <div class="tab-content" id="v-pills-tabContent">
             <!-- 查詢會員資料 -->
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-
+                <div class="form-group center">
+                    <h4>查詢會員資料</h4>
+                    <input type="text" class="form-control" placeholder="會員ID、會員姓名..." name="searchMember">
+                    <button type="button"class="btn btn-primary btn-sm" onclick="searchMember()">查詢</button>
+                </div>
+                <!-- 如果點了查詢才出現 -->
+                <div id="member">
+                    <span name="name"></span><br>
+                    <span  name="tel"></span><br>
+                    <span  name="mail"></span><br>
+                    <span></span><br>
+                </div>
             </div>
             <!-- 查詢訂單紀錄 -->
             <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                <div class="form-group">
+                <div class="form-group center">
                     <h4>查詢訂單紀錄</h4>
-                    <input type="text" class="form-control" placeholder="請輸入ID或姓名..." name="searchOrder">
+                    <input type="text" class="form-control" placeholder="訂單ID、姓名、日期..." name="searchOrder">
                     <button type="button"class="btn btn-primary btn-sm" onclick="searchOrder()">查詢</button>
                 </div>
                 <!-- 當日、某會員的所有訂單內容 -->
@@ -135,26 +146,38 @@ if (!user::check()) {
                             <tbody id="orderlist"></tbody>
                         </table>
                     </div>    
-                    <!-- 當按下詳細資料 -->
-                    <div class="card w-50 window">
-                        <div class="card-body" id="orderDetail">
-                            <p>
-                                <h5 class="card-title"></h5>
-                            </p>
-                            <p class="card-text">
-                                <p>
-                                    <span></span><br>
-                                    <span></span><br>
-                                    <span></span><br>
-                                    <span></span><br>
-                                </p>
-                            </p>
-                            <a href="#" class="btn btn-primary btn-sm">編輯</a>
-                            <button type="button" class="btn btn-primary btn-sm">刪除</button>
-                            <button type="button" class="btn btn-primary btn-sm" id="closedetail"onclick="closeOrderDetail()">關閉</button>
-                        </div>
-                    </div>
                 </div>    
+                <!-- 當按下詳細資料 -->
+                <div class="card w-50 window">
+                    <div class="card-body" id="orderDetail">
+                        <p>
+                            <h5 class="card-title"></h5>
+                        </p>
+                        <p class="card-text">
+                            <p>
+                                <span></span><br>
+                                <span></span><br>
+                                <span></span><br>
+                                <span></span><br>
+                                <span></span><br>
+                            </p>
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">編輯</a>
+                        <button type="button" class="btn btn-primary btn-sm">刪除</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="closedetail"onclick="closeOrderDetail()">關閉</button>
+                    </div>
+                </div>
+                <!-- 單筆訂單內容 -->
+                <div id="orderdetailbyid">
+                    <span></span><br>
+                    <span></span><br>
+                    <span></span><br>
+                    <span></span><br>
+                    <span></span><br>
+                    <span></span><br>
+                    <span></span><br>
+                    <span></span><br>
+                </div>
             </div>
         </div>
     </div>

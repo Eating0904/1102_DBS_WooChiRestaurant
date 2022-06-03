@@ -14,6 +14,7 @@ function login() {
                     window.location.href = "../home";
                 }
                 else {
+                    alert(response["error"]);
                     console.log(response["error"]);
                 }
             }

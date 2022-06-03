@@ -13,9 +13,11 @@ function register() {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
+                    alert("註冊成功")
                     window.location.href = "../login";
                 }
                 else {
+                    alert("帳號已建立")
                     console.log(response["error"]);
                 }
             }

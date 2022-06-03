@@ -51,3 +51,9 @@
 .tab-content>.active {
     text-align: center;
 }
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #7bdbdbba;
+    border: solid 1.5px  #2e7878;
+    margin-left: 10%;
+}
