@@ -127,8 +127,8 @@ if (!user::check()) {
                 <small class="text-muted" name="name">姓名 : </small><br>
                 <small class="text-muted" name="tel">連絡電話 : </small><br>
                 <small class="text-muted" name="mail">聯絡信箱 : </small><br>
+                <small class="text-muted"> *若要更改，請至「會員」 -> 「會員資料」 修改 </small>
             </div>
-            <small class="text-muted"> *若要更改，請至「會員專區」 -> 「會員專區」 修改 </small>
         </div>
         <form>
             <div class="center">

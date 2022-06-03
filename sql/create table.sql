@@ -35,9 +35,8 @@ CREATE TABLE ORDERS(
     num_of_people INT NOT NULL,
     seat CHAR(2) NOT NULL,
     adoption CHAR(1),
-    points INT,
-    note TEXT,
-    
+    note TEXT NOT NULL,
+
     PRIMARY KEY(o_id),
     FOREIGN KEY(u_id) REFERENCES USERS(u_id)
 ); 

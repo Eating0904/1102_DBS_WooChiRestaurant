@@ -18,9 +18,10 @@
     border: solid 2px #000000;
     background-color: #d2eaea;
     position: absolute;
-    top: 15%;
-    left: 15%;
+    top: 10%;
+    left: 25%;
     display: none;
+    z-index: 99;
 }
 .center {
     text-align: center;
@@ -30,9 +31,7 @@
 .table td {
     vertical-align: middle;
 }
-.table {
-    width: 50%;
-}
+
 /* .col-10 {
     text-align: center;
 } */
@@ -56,4 +55,13 @@
     background-color: #7bdbdbba;
     border: solid 1.5px  #2e7878;
     margin-left: 10%;
+}
+
+.bgcolor-white {
+    background-color: #fff !important;
+}
+
+.card-text {
+    display: inline-block;
+    text-align: left;
 }

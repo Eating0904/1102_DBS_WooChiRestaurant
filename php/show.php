@@ -127,7 +127,7 @@ class show {
        return $array ;
     }
     static function order_detail($o_id,$array) {
-        $sql = " SELECT meal_time,num_of_people,seat,adoption,points,note FROM orders WHERE o_id='$o_id'; ";
+        $sql = " SELECT * FROM orders WHERE o_id='$o_id'; ";
         $result =  database::$conn->query($sql);
        
         while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
@@ -136,7 +136,6 @@ class show {
                 "num_of_people" => $row["num_of_people"],
                 "seat" => $row["seat"],
                 "adoption" => $row["adoption"],
-                "points" => $row["points"],
                 "note" => $row["note"]
             ];
             array_push($array,$temp); 

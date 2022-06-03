@@ -21,7 +21,7 @@ function putMemberInfo(MEMBER) {
     member[1].textContent += `${MEMBER[0]["c_name"]}`;
     member[2].textContent += `${MEMBER[0]["c_phone"]}`;
     member[3].textContent += `${MEMBER[0]["c_mail"]}`;
-    member[4].textContent += `${MEMBER[0]["c_points"]}`;
+    member[4].textContent += `${MEMBER[0]["c_points"]}pt`;
 }
 //在編輯框裡顯示會員資料
 function editMemberInfo(MEMBER) {
@@ -85,15 +85,22 @@ function postOrder() {
 }
 //顯示詳細資訊
 function showOrderDetail() {
-    document.getElementsByClassName("cover")[0].style.display = "block";
-    document.getElementById("orderDetail").style.display = "block";
-    document.getElementsByClassName("window")[0].style.display = "block";
+    let pageHeight = Math.max($("#v-pills-tabContent").outerHeight(), $("html").outerHeight());  // 取得內容或html的最大高度
+    let nowPosition = document.documentElement.scrollTop;  // 取得滾動高度
+    let windowPosition = nowPosition + 53;  // 設定 window 距離上方的位置
+    $('.cover').css("display", "block");
+    $('.cover').outerHeight(pageHeight + nowPosition);  // 蓋住整個頁面
+    $('.window').css("display", "block");
+    $('.window').css("top", windowPosition);  // 重設 top
+    $("body").css("overflow-y", "hidden");  // 固定頁面
+    $("#orderDetail").css("display", "block");
 }
 //關閉詳細資訊
 function closeOrderDetail() {
-    document.getElementsByClassName("cover")[0].style.display = "none";
-    document.getElementById("orderDetail").style.display = "none";
-    document.getElementsByClassName("window")[0].style.display = "none";
+    $(".cover").css("display", "none");
+    $(".window").css("display", "none");
+    $("body").css("overflow-y", "auto");
+    $("#orderDetail").css("display", "none");
 }
 function putOrderList(ORDERS) {
     let list = document.getElementById("orderlist");

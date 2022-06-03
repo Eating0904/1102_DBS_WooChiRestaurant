@@ -53,12 +53,23 @@
 .table td {
     vertical-align: middle;
 }
-.table {
-    width: 50%;
-}
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     background-color: #7bdbdbba;
     border: solid 1.5px  #2e7878;
     margin-left: 10%;
+}
+
+.window {
+    border: solid 2px #000000;
+    background-color: #d2eaea;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    display: none;
+    z-index: 99;
+}
+
+.bgcolor-white {
+    background-color: #fff !important;
 }

@@ -98,7 +98,7 @@ if (!user::check()) {
             </ul>
         </div>
     </nav>
-
+    <div class="cover"></div>
     <div class="row">
         <div class="col-2">
             <h3>後台管理</h3>
@@ -133,19 +133,27 @@ if (!user::check()) {
                 </div>
                 <!-- 當日、某會員的所有訂單內容 -->
                 <div id="hide">
-                    <div class="table-center">
-                        <table class="table table-sm">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th scope="col">用餐日期及時間</th>
-                                    <th scope="col">姓名</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody id="orderlist"></tbody>
-                        </table>
-                    </div>    
+                    <div class="container bgcolor-white">
+                        <div class="row">
+                            <div class="col-2 bgcolor-white"></div>
+                            <div class="col-8 bgcolor-white">
+                                <div class="table-center">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th scope="col">用餐日期及時間</th>
+                                                <th scope="col">姓名</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="orderlist"></tbody>
+                                    </table>
+                                </div>        
+                            </div>
+                            <div class="col-2 bgcolor-white"></div>
+                        </div>
+                    </div>
                 </div>    
                 <!-- 當按下詳細資料 -->
                 <div class="card w-50 window">

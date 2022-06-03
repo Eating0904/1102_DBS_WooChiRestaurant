@@ -106,7 +106,7 @@ require("../php/User.php");
                 <img src="logo_tmp.jpg" class="card-img-top" alt="Image" height="100%">
                 <div class="card-body">
                     <h4 class="card-title">WooChi Restaurant</h4>
-                    <p class="card-text" id="description" contenteditable="true"></p>
+                    <p class="card-text" id="description" contenteditable="true" white-space="pre"></p>
                     <?php if(User::check()): ?>
                         <?php if($_COOKIE["id"] == "1"): ?>
                             <span class="edit">

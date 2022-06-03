@@ -23,22 +23,19 @@ function putRestaurant() {
     )
 }
 function editRestaurant() {
-    // console.log("click")
-
-    url = "../php/edit_restaurant.php"
-    data = {
+    let url = "../php/edit_restaurant.php"
+    let data = {
         "desc" : $("#description").text(),
-        "name" : $("span[name='name']").text(),
-        // "tel" : $("span[name='tel']").text(),
+        "tel" : $("span[name='tel']").text(),
         "mail" : $("span[name='mail']").text(),
         "location" : $("span[name='location']").text(),
         "hour" : $("span[name='openinghour']").text(),
     }
-    // console.log(data)
     $.post(
         url,
         data,
         (response, status) => {
+            console.log(response);
             if (status == "success") {
                 if (response["status"] == "success") {
                     window.location.reload();

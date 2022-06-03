@@ -8,7 +8,7 @@
     // $content = $_REQUEST["content"];
     $content = $_POST["content"];
 
-    $sql = " SELECT meal_time,num_of_people,seat,adoption,points,note FROM orders WHERE o_id='$content'; ";
+    $sql = " SELECT * FROM orders WHERE o_id='$content'; ";
     $result =  database::$conn->query($sql);
 
     if( $row=$result->fetch_array(MYSQLI_ASSOC) )	{
@@ -16,7 +16,6 @@
         $num = $row["num_of_people"];
         $seat = $row["seat"];
         $a = $row["adoption"];
-        $p = $row["points"];
         $n = $row["note"];
 
         $sql_5 = " SELECT u_id from orders where o_id = '$content' ";
@@ -33,7 +32,6 @@
             "num_of_people" => $num,
             "seat" => $seat,
             "adoption" => $a,
-            "points" => $p,
             "note" => $n,
             "c_name" => $row_6["c_name"],
             "c_phone" => $row_6["c_phone"], 

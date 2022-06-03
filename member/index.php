@@ -161,18 +161,26 @@ if (!user::check()) {
                     <div class="center">
                         <h4>訂單紀錄</h4>
                     </div>
-                    <div class="table-center">
-                        <table class="table table-sm">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th scope="col">用餐日期及時間</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody id="orderlist"></tbody>
-                        </table>
-                    </div>    
+                    <div class="container bgcolor-white">
+                        <div class="row">
+                            <div class="col-2 bgcolor-white"></div>
+                            <div class="col-8 bgcolor-white">
+                                <div class="table-center">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th scope="col">用餐日期及時間</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="orderlist"></tbody>
+                                    </table>
+                                </div>    
+                            </div>
+                            <div class="col-2 bgcolor-white"></div>
+                        </div>
+                    </div>
                         <!-- 當按下詳細資料 -->
                         <div class="card w-50 window">
                             <div class="card-body" id="orderDetail">
@@ -180,20 +188,18 @@ if (!user::check()) {
                                     <h5 class="card-title"></h5>
                                 </p>
                                 <p class="card-text">
-                                    <p>
-                                        <span></span><br>
-                                        <span></span><br>
-                                        <span></span><br>
-                                        <span></span><br>
-                                    </p>
-                                    <p>
-                                        <span></span><br>
-                                        <span></span><br>
-                                    </p>
+                                    <span></span><br>
+                                    <span></span><br>
+                                    <span></span><br>
+                                    <span></span><br>
+                                    <span></span><br>
+                                    <span></span><br>    
                                 </p>
-                                <a href="#" class="btn btn-primary btn-sm">編輯</a>
-                                <button type="button" class="btn btn-primary btn-sm">刪除</button>
-                                <button type="button" class="btn btn-primary btn-sm" id="closedetail"onclick="closeOrderDetail()">關閉</button>
+                                <!-- <a href="#" class="btn btn-primary btn-sm">編輯</a>
+                                <button type="button" class="btn btn-primary btn-sm">刪除</button> -->
+                                <p>
+                                    <button type="button" class="btn btn-primary btn-sm" id="closedetail"onclick="closeOrderDetail()">關閉</button>
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -75,11 +75,13 @@ function putRate(RATE) {
         setTimeout(
             function() {
                 $(`#star-${RATE[i]["score"]}-${i}`).prop("checked", true)
+                // $(".star").prop("disabled", true)
             },
         );
     }
 }
 function giveRate() {
+    // $(".star").prop("disabled", false)
     let url = "../php/insert_rate.php";
     let data = {
         "star" : $('input[name=star]:checked').val(),
