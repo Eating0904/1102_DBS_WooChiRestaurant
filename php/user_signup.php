@@ -3,19 +3,22 @@
     $response = [
         "status" => "fail",
     ];
-
+    
     $account = $_REQUEST["account"];
     $password = $_REQUEST["password"];
     $name = $_REQUEST["name"]; 
     $phone = $_REQUEST["tel"];
     $mail = $_REQUEST["mail"];
+
     
     //判斷
     $sql = " select  account from users where account = '$account' ; ";
     $result = database::$conn->query($sql);
     $row = $result->fetch_array(MYSQLI_ASSOC);
-   
-    if( !empty($row['account']) ){
+    if( empty($account) ||  empty($password)){
+        $response["status"] = "fail";
+        $response["error"] = "帳號密碼不得為空";  
+    }else if( !empty($row['account']) ){
         $response["error"] = "帳號已建立";  
     }else{
        $r = user::register($account, $password, $name,$phone,$mail) ;
