@@ -6,7 +6,7 @@
     $array=[];
 
     // $content = $_REQUEST["content"];
-    $content = $_POST["content"];
+    $content = $_REQUEST["content"];
 
 
     $sql = " select c_name,c_phone, c_mail, c_points from customer WHERE u_id = '$content'; ";

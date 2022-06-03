@@ -6,7 +6,7 @@
     $array=[];
 
     // $content = $_REQUEST["content"];
-    $content = $_POST["content"];
+    $content = $_REQUEST["content"];
     if( $row=show::order_detail($content,$array) )	{
         $response["status"] = "success";
         $response["data_order"] = $row ;
