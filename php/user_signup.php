@@ -17,7 +17,7 @@
     $row = $result->fetch_array(MYSQLI_ASSOC);
     if( empty($account) ||  empty($password)){
         $response["status"] = "fail";
-        $response["error"] = "帳號密碼不得為空";  
+        $response["error"] = "未填寫帳號密碼";  
     }else if( !empty($row['account']) ){
         $response["error"] = "帳號已建立";  
     }else{
