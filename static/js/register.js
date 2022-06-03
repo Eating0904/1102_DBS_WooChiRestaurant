@@ -17,7 +17,7 @@ function register() {
                     window.location.href = "../login";
                 }
                 else {
-                    alert("帳號已建立")
+                    alert(response["error"])
                     console.log(response["error"]);
                 }
             }
@@ -27,7 +27,6 @@ function register() {
 
 $(document).ready(() => {
     $("#submit").click(() => {
-        console.log("click");
         register();
     })
 });

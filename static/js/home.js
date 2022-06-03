@@ -23,35 +23,25 @@ function putRestaurant() {
     )
 }
 function editRestaurant() {
-    url = ""
+    // console.log("click")
+
+    url = "../php/edit_restaurant.php"
     data = {
-        "desc" : $("#description").val(),
-        "name" : $("input[name='name']").val(),
-        "tel" : $("input[name='tel']").val(),
-        "mail" : $("input[name='mail']").val(),
-        "location" : $("input[name='mail']").val(),
+        "desc" : $("#description").text(),
+        "name" : $("span[name='name']").text(),
+        // "tel" : $("span[name='tel']").text(),
+        "mail" : $("span[name='mail']").text(),
+        "location" : $("span[name='location']").text(),
+        "hour" : $("span[name='openinghour']").text(),
     }
-    $("#saveNewMemberInfo").click(() => {
-        postNewMemberInfo(url, data);
-    })
+    // console.log(data)
     $.post(
         url,
         data,
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
-                    let DESCRIPTION = response["data"]["description"];
-                    //餐廳簡介
-                    let des = document.getElementById("description");
-                    des.innerHTML = `${DESCRIPTION}`;
-                    //餐廳基本資訊
-                    let RESTAURANT = response["data"];
-                    let base = document.getElementById("restaurant").getElementsByTagName("span");
-                    base[0].textContent += `${RESTAURANT["name"]}`;
-                    base[1].textContent += `${RESTAURANT["location"]}`;
-                    base[2].textContent += `${RESTAURANT["phone"]}`;
-                    base[3].textContent += `${RESTAURANT["mail"]}`;
-                    base[4].textContent += `${RESTAURANT["opening_hour"]}`;
+                    window.location.reload();
                 }
             }
         }

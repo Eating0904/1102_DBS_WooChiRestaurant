@@ -7,7 +7,7 @@ $response = [
 ];
 
 $u_id = $_SESSION["u_id"];
-$nmae = $_POST["name"];
+$name = $_POST["name"];
 $mail = $_POST["mail"];
 $location = $_POST["location"];
 $hour = $_POST["hour"];

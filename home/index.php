@@ -103,14 +103,14 @@ require("../php/User.php");
         <!-- 餐廳簡介+LOGO照片 -->
         <p class="center">
             <div class="card mb-3">
-                <img src="logo_tmp.jpg" class="card-img-top" alt="Image" height="300">
+                <img src="logo_tmp.jpg" class="card-img-top" alt="Image" height="100%">
                 <div class="card-body">
                     <h4 class="card-title">WooChi Restaurant</h4>
                     <p class="card-text" id="description" contenteditable="true"></p>
                     <?php if(User::check()): ?>
                         <?php if($_COOKIE["id"] == "1"): ?>
                             <span class="edit">
-                                <button class="btn btn-primary btn-sm" type="submit" >儲存</button>
+                                <button class="btn btn-primary btn-sm" type="button" onclick="editRestaurant()">儲存</button>
                             </span>
                         <?php endif; ?>
                     <?php endif; ?>
@@ -122,15 +122,15 @@ require("../php/User.php");
             <div>
                 <h4>基本資料</h4>
                 <div id="restaurant" >
-                    <span></span> <br>
-                    <span >地址 : </span> <br>
-                    <span >連絡電話 : </span> <br>
-                    <span >聯絡信箱 : </span> <br>
-                    <span >營業時間 : </span> <br>
+                    <span name="name"></span> <br>
+                    地址 : <span contenteditable="true" name="location"></span><br>
+                    連絡電話 : <span contenteditable="true" name="tel"></span> <br>
+                    聯絡信箱 : <span contenteditable="true" name="mail"></span> <br>
+                    營業時間 : <span contenteditable="true" name="openinghour"></span> <br>
                     <?php if(User::check()): ?>
                         <?php if($_COOKIE["id"] == "1"): ?>
                             <span class="edit">
-                                <button class="btn btn-primary btn-sm" type="submit" >儲存</button>
+                                <button class="btn btn-primary btn-sm" type="button" onclick="editRestaurant()" >儲存</button>
                             </span>
                         <?php endif; ?>
                     <?php endif; ?>

@@ -101,7 +101,7 @@ if (!user::check()) {
 
     <div class="row">
         <div class="col-2">
-            <h3>後臺管理</h3>
+            <h3>後台管理</h3>
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">查詢會員資料</a>
                 <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">查詢訂單紀錄</a>

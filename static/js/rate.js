@@ -30,10 +30,11 @@ function putRate(RATE) {
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-3">
-                                            <h5 class="card-title">${RATE[i]["name"]}</h5>
+                                        <small>${RATE[i]["date"]}發布</small>
+                                        <h5 class="card-title">${RATE[i]["name"]}</h5>
                                         </div>
                                         <div class="col-9">
-                                            <div id="stars">
+                                        <div id="stars">
                                                 <form action="">
                                                     <input class="star star-5" id="star-5-${i}" type="radio" name="star" value="5">
                                                     <label class="star star-5" for="star-5-${i}"></label>
@@ -47,11 +48,11 @@ function putRate(RATE) {
                                                     <label class="star star-1" for="star-1-${i}"></label>
                                                 </form>
                                             </div>
-                                        </div>    
-                                    </div>
-                                    <hr>
-                                    <p class="card-text" name="ratecontent">${RATE[i]["content"]}</p>
-                                    <p class="card-text" name="ratecontent">WooChi : ${RATE[i]["r_reply"]}</p>
+                                            </div>    
+                                            </div>
+                                            <hr>
+                                            <p class="card-text" name="ratecontent">${RATE[i]["content"]}</p>
+                                            <p class="card-text" name="ratecontent">WooChi : <br>${RATE[i]["r_reply"]}</p>
                                     <!-- 店家才有 -->
                                     <button type="button" class="btn btn-primary btn-sm hide-r" onclick="showReplyBox(${RATE[i]["r_id"]})">回覆</button>
                                     <!-- 點了回覆之後 -->
@@ -60,7 +61,7 @@ function putRate(RATE) {
                                             <div class="card-body">
                                                 <h5 class="card-title" >給予回覆</h5>
                                                 <p class="card-text">
-                                                    <textarea class="text" placeholder="輸入回覆內容!" id="reply_rate"></textarea>   
+                                                    <textarea class="text" placeholder="輸入回覆內容!" id="reply_rate-${RATE[i]["r_id"]}"></textarea>   
                                                 </p>
                                                 <button type="button" class="btn btn-primary btn-sm" onclick="closeReplyBox(${RATE[i]["r_id"]})">取消</button>
                                                 <button type="button" class="btn btn-primary btn-sm" onclick="closeReplyBox(${RATE[i]["r_id"]});giveReply(${RATE[i]["r_id"]})">發送</button>
@@ -100,23 +101,32 @@ function giveRate() {
 }
 
 function giveReply(id) {
-    let url = "../php/reply_rate.php";
-    let data = {
-        "r_id" : id,
-        "content" : $("#reply_rate").val()
-    }
-    $.post(
-        url,
-        data,
-        (response, status) => {
-            if (status == "success") {
-                if (response["status"] == "success") {
-                    alert("回覆成功")
-                    window.location.reload();
-                }
+    setTimeout(
+        function() {
+            let url = "../php/reply_rate.php";
+            let data = {
+                "r_id" : id,
+                "content" : $(`#reply_rate-${id}`).val()
             }
-        }
-    )
+            console.log(data)
+            $.post(
+                url,
+                data,
+                (response, status) => {
+                    if (status == "success") {
+                        if (response["status"] == "success") {
+                            alert("回覆成功")
+                            window.location.reload();
+                        }
+                    }
+                }
+            )    
+        },
+        50
+    );
+
+
+
 }
 
 function showRateBox() {
@@ -155,7 +165,7 @@ function isRestaurant() {
                         );
                     }
                     else {
-                        console.log("restaurant");
+                        // console.log("restaurant");
                     }
                 }
                 else {
