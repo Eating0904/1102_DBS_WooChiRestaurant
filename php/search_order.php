@@ -6,10 +6,43 @@
     $array=[];
 
     // $content = $_REQUEST["content"];
-    $content = $_REQUEST["content"];
-    if( $row=show::order_detail($content,$array) )	{
+    $content = $_POST["content"];
+
+    $sql = " SELECT meal_time,num_of_people,seat,adoption,points,note FROM orders WHERE o_id='$content'; ";
+    $result =  database::$conn->query($sql);
+
+    if( $row=$result->fetch_array(MYSQLI_ASSOC) )	{
+        $time = $row["meal_time"];
+        $num = $row["num_of_people"];
+        $seat = $row["seat"];
+        $a = $row["adoption"];
+        $p = $row["points"];
+        $n = $row["note"];
+
+        $sql_5 = " SELECT u_id from orders where o_id = '$content' ";
+        $result_5 =  database::$conn->query($sql_5);
+        $row_5 =  $result_5->fetch_array(MYSQLI_ASSOC);
+        $u_id = $row_5["u_id"];
+
+        $sql_6 = " SELECT c_name,c_phone,c_mail from customer where u_id = '$u_id' ";
+        $result_6 =  database::$conn->query($sql_6);
+        $row_6 =  $result_6->fetch_array(MYSQLI_ASSOC);
+        
+        $temp=[
+            "meal_time" => $time,
+            "num_of_people" => $num,
+            "seat" => $seat,
+            "adoption" => $a,
+            "points" => $p,
+            "note" => $n,
+            "c_name" => $row_6["c_name"],
+            "c_phone" => $row_6["c_phone"], 
+            "c_mail" => $row_6["c_mail"]
+        ];
+
+        array_push($array,$temp);
         $response["status"] = "success";
-        $response["data_order"] = $row ;
+        $response["data_order"] = $array ;
         $response["type"] = "ID";
     }
 
