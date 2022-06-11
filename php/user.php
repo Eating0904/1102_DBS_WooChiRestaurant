@@ -30,8 +30,8 @@ class user {
             $select = "SELECT u_id FROM users WHERE account='$account'; ";
             $result =  database::$conn->query($select)   ;
             $data = [];
-            $token = bin2hex(random_bytes(16));  # 32 bits
-            while ($row = $result->fetch_array(MYSQLI_ASSOC)){// mysqli_fetch_assoc($result)
+            $token = bin2hex(random_bytes(16));
+            while ($row = $result->fetch_array(MYSQLI_ASSOC)){
                 $data["id"] = $row["u_id"];
                 $data["token"] = $token;
                 self::createsession($data);

@@ -5,25 +5,11 @@ require("openSession.php");
 $response = [
     "status" => "fail"
 ];
-// !empty($_REQUEST["name"]) && !empty($_REQUEST["phone"])&& 
-//     !empty($_REQUEST["email"])&& !empty($_REQUEST["start"]) && 
-//     !empty($_REQUEST["time"]) && !empty($_REQUEST["people"])&& 
-//     !empty($_REQUEST["adopt"])&& !empty($_REQUEST["note"])
 if(
     !empty($_REQUEST["time"]) && !empty($_REQUEST["people"])&& 
     !empty($_REQUEST["seat"])&&!empty($_REQUEST["adopt"])
 ) {
-    // $name = $_REQUEST["name"];
-    // $phone = $_REQUEST["phone"];
-    // $email = $_REQUEST["email"];
-    // $start = $_REQUEST["start"];
-    // $time = $_REQUEST["time"];
-    // $people = $_REQUEST["people"];
-    // $adopt = $_REQUEST["adopt"];
-    // $note = $_REQUEST["note"];
-
     $u_id = $_SESSION["id"]; 
-
     $time = $_REQUEST["time"];
     $people = $_REQUEST["people"];
     $seat = $_REQUEST["seat"];

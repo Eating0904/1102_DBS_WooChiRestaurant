@@ -13,14 +13,11 @@ $name = $_REQUEST["name"];
 $phone = $_REQUEST["phone"];
 $mail = $_REQUEST["mail"];
 
-// echo $name."<br>".$phone."<br>".$mail ;
-
 if($u_id!=1){
     $sql=" UPDATE customer SET c_name='$name', c_phone='$phone',c_mail='$mail' WHERE u_id='$u_id';" ;
-    $result =  database::$conn->query($sql);//or die("select error");
+    $result =  database::$conn->query($sql);
     $sql = "UPDATE users SET account='$account' WHERE u_id='$u_id'";
     database::$conn->query($sql);
-    //if( $result ) $response["status"] = "success";
 }
 
 header('Content-Type: application/json; charset=utf-8');

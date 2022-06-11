@@ -5,12 +5,9 @@
     ];
     $array=[];
 
-    // $content = $_REQUEST["content"];
     $content = $_REQUEST["content"];
-
-
     $sql = " select c_name,c_phone, c_mail, c_points from customer WHERE u_id = '$content'; ";
-    $result =  database::$conn->query($sql);// or die("select error");
+    $result =  database::$conn->query($sql);
     if( $row =  $result->fetch_array(MYSQLI_ASSOC) ){
         $temp=[
             "c_name" => $row["c_name"],
@@ -24,9 +21,6 @@
         $response["data"] = $array ;
     }
     
-    
-  
-
     $sql_1 = " SELECT c_name,c_phone, c_mail, c_points from customer WHERE c_name='$content'; ";
     $result_1 =  database::$conn->query($sql_1);
     

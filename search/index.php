@@ -170,8 +170,8 @@ if (!user::check()) {
                                 <span></span><br>
                             </p>
                         </p>
-                        <a href="#" class="btn btn-primary btn-sm">編輯</a>
-                        <button type="button" class="btn btn-primary btn-sm">刪除</button>
+                        <!-- <a href="#" class="btn btn-primary btn-sm">編輯</a>
+                        <button type="button" class="btn btn-primary btn-sm">刪除</button> -->
                         <button type="button" class="btn btn-primary btn-sm" id="closedetail"onclick="closeOrderDetail()">關閉</button>
                     </div>
                 </div>

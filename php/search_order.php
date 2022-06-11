@@ -4,10 +4,7 @@
         "status" => "fail",
     ];
     $array=[];
-
-    // $content = $_REQUEST["content"];
     $content = $_POST["content"];
-
     $sql = " SELECT * FROM orders WHERE o_id='$content'; ";
     $result =  database::$conn->query($sql);
 

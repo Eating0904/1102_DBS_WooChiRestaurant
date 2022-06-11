@@ -95,6 +95,7 @@ CREATE TABLE PETS(
     p_description TEXT,
     microchip CHAR(1),
     ligation CHAR(1),
+    type CHAR(1),
     
     PRIMARY KEY(p_id),
     FOREIGN KEY(u_id) REFERENCES USERS(u_id)

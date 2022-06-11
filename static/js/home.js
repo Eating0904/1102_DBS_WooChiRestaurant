@@ -38,6 +38,7 @@ function editRestaurant() {
             console.log(response);
             if (status == "success") {
                 if (response["status"] == "success") {
+                    alert("已儲存變更")
                     window.location.reload();
                 }
             }

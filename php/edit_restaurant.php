@@ -14,8 +14,9 @@ $hour = $_REQUEST["hour"];
 $desc = $_REQUEST["desc"];
 
 if($u_id==1){
-    $sql=" UPDATE restaurant SET  phone='$tel' ,mail='$mail',location='$location',opening_hour='$hour',description='$desc' WHERE $u_id=1; ";
-    $result =  database::$conn->query($sql);// or die("select error");
+    $sql=" UPDATE restaurant SET  phone='$tel' ,mail='$mail',location='$location',opening_hour='$hour',
+           description='$desc' WHERE $u_id=1; ";
+    $result =  database::$conn->query($sql);
     if( $result ) $response["status"] = "success";
 
 }

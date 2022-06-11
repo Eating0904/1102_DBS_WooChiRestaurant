@@ -6,7 +6,7 @@ class show {
     static function customer($u_id) {
         $array = [];
         $sql = " select c_name,c_phone, c_mail, c_points from customer WHERE u_id = '$u_id'; ";
-        $result =  database::$conn->query($sql);// or die("select error");
+        $result =  database::$conn->query($sql);
         while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
             $temp=[
                 "c_name" => $row["c_name"],
@@ -17,19 +17,14 @@ class show {
             array_push($array,$temp); 
         }
         $sql = " select account from users WHERE u_id = '$u_id'; ";
-        $result =  database::$conn->query($sql);// or die("select error");
+        $result =  database::$conn->query($sql);
         while(  $row =  $result->fetch_array(MYSQLI_ASSOC) ){
             $temp=[
                 "account" => $row["account"],
             ];
             array_push($array,$temp); 
         }
-
-
         return $array ;
-        // $row =  $result->fetch_array(MYSQLI_ASSOC); 
-        // //var_dump($row);
-        // return $row ;
     }
     static function restaurant($u_id) {
         $sql = " SELECT name,mail, phone,location,opening_hour,description FROM restaurant WHERE u_id= '$u_id'; "; 
@@ -89,12 +84,11 @@ class show {
         $sql = " SELECT u_id FROM rate; ";
         $result =  database::$conn->query($sql);
 
-        while( $row =  $result->fetch_array(MYSQLI_ASSOC)  ){
+        while( $row =  $result->fetch_array(MYSQLI_ASSOC) ){
             $u_id = $row["u_id"];
             $sql = "SELECT * FROM customer, rate WHERE customer.u_id=rate.u_id ORDER BY r_date DESC";
-            $result =  database::$conn->query($sql);// or die("select error");
+            $result =  database::$conn->query($sql);
             
-
             while($row =  $result->fetch_array(MYSQLI_ASSOC)){
                 $temp=[
                     "name" => $row["c_name"],
@@ -105,13 +99,9 @@ class show {
                     "r_reply" => $row["r_reply"]
                 ];
                 array_push($array,$temp); 
-            }
-            
-            
-            
+            }  
             return $array ;
-        }
-       
+        }  
     }
     static function order($u_id,$array) {
         $sql = " SELECT o_id,meal_time FROM orders WHERE u_id='$u_id' order by meal_time DESC;";
