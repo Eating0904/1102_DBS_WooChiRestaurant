@@ -27,22 +27,24 @@
 
     <div class="container">
         <div>
-            <h3>登入</h3>
-        </div>
-        <form>
-            <div class="form-group">
-                <h5>帳號</h5>
-                <input type="text" class="form-control" placeholder="請輸入帳號" name="account">
+            <div>
+                <h3>登入</h3>
             </div>
-            <div class="form-group">
-                <h5>密碼</h5>
-                <input type="password" class="form-control" placeholder="請輸入密碼" name="password">
+            <form>
+                <div class="form-group">
+                    <h5>帳號</h5>
+                    <input type="text" class="form-control" placeholder="請輸入帳號" name="account">
+                </div>
+                <div class="form-group">
+                    <h5>密碼</h5>
+                    <input type="password" class="form-control" placeholder="請輸入密碼" name="password">
+                </div>
+                <button type="button" id="submit" class="btn btn-primary btn-sm">登入</button>
+            </form>
+            <div class="padding">
+                還沒加入會員嗎?
+                <a href="../register">立即加入</a>
             </div>
-            <button type="button" id="submit" class="btn btn-primary btn-sm">登入</button>
-        </form>
-        <div>
-            還沒加入會員嗎?
-            <a href="../register">立即加入</a>
         </div>
     </div>
 </body>

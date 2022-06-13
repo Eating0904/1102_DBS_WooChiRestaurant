@@ -23,6 +23,7 @@ html, body{
 }
 .dropdown-menu {
     min-width: 0 !important;
+    text-align: center;
 }
 .cover{
     background-color: rgba(0, 0, 0, 0.5);
@@ -33,7 +34,14 @@ html, body{
     z-index: 50;
     display: none;
 }
-
+.no-bg{
+    background-color: white !important;
+}
+#btn-center{
+    position: absolute;
+    display: block;
+    text-align: center;
+}
 /* .center {
     display: inline-block !important;
     text-align: center !important;

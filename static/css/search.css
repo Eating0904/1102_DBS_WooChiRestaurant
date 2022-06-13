@@ -1,5 +1,9 @@
 #orderDetail{
     display: none;
+    text-align: center;
+}
+#closedetail{
+    text-align: center;
 }
 .window {
     border: solid 2px #000000;
@@ -69,7 +73,10 @@
     display: none;
     z-index: 99;
 }
-
+.card-text{
+    text-align: left;
+    margin-left: 10%;
+}
 .bgcolor-white {
     background-color: #fff !important;
 }

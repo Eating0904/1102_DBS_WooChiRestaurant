@@ -154,9 +154,6 @@ require("../php/User.php");
                     <tbody id="news"></tbody>
             </div>
         </p>
-
-    </div>
-
-
+    </div>    
 </body>
 </html>

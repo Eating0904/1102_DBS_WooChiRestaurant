@@ -98,7 +98,7 @@ if (!user::check()) {
             </ul>
         </div>
     </nav>
-    <div class="cover"></div>
+    <div class="cover" onclick="closeOrderDetail()"></div>
     <div class="row">
         <div class="col-2">
             <h3>後台管理</h3>
@@ -161,17 +161,15 @@ if (!user::check()) {
                         <p>
                             <h5 class="card-title"></h5>
                         </p>
-                        <p class="card-text">
-                            <p>
-                                <span></span><br>
-                                <span></span><br>
-                                <span></span><br>
-                                <span></span><br>
-                                <span></span><br>
-                            </p>
+                        <p class="card-text">    
+                            <span></span><br>
+                            <span></span><br>
+                            <span></span><br>
+                            <span></span><br>
+                            <span></span><br>    
+                            <!-- <a href="#" class="btn btn-primary btn-sm">編輯</a>
+                            <button type="button" class="btn btn-primary btn-sm">刪除</button> -->
                         </p>
-                        <!-- <a href="#" class="btn btn-primary btn-sm">編輯</a>
-                        <button type="button" class="btn btn-primary btn-sm">刪除</button> -->
                         <button type="button" class="btn btn-primary btn-sm" id="closedetail"onclick="closeOrderDetail()">關閉</button>
                     </div>
                 </div>
