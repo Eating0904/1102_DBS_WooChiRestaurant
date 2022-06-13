@@ -99,11 +99,11 @@ require("../php/User.php");
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container no-bg">
         <!-- 餐廳簡介+LOGO照片 -->
         <p class="center">
             <div class="card mb-3">
-                <img src="logo_tmp.jpg" class="card-img-top" alt="Image" height="100%">
+                <img src="../static/img/woochi.jpg" class="card-img-top" alt="Image" height="100%">
                 <div class="card-body">
                     <h4 class="card-title">WooChi Restaurant</h4>
                     <p class="card-text" id="description" contenteditable="true" white-space="pre"></p>
@@ -119,7 +119,7 @@ require("../php/User.php");
         </p>
         <p class="center">
             <!-- 餐廳基本資訊 -->
-            <div>
+            <div class="border">
                 <h4>基本資料</h4>
                 <div id="restaurant" >
                     <span name="name"></span> <br>
@@ -134,16 +134,14 @@ require("../php/User.php");
                             </span>
                         <?php endif; ?>
                     <?php endif; ?>
-                </div>
-                
+                </div>    
             </div>
         </p>
-        <hr>
         <p class="center">
             <!-- 餐廳最新消息 -->
-            <div>
+            <div class="border">
                 <h4>最新消息</h4>
-                <table class="table table-sm">
+                <table class="table table-sm border">
                     <thead>
                         <tr>
                             <th>#</th>

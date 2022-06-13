@@ -37,7 +37,6 @@
                 帳號 : <input type="text" class="form-control" placeholder="請輸入帳號" name="account">
                 密碼 : <input type="password" class="form-control" placeholder="請輸入密碼" name="password">
             </div>
-            <hr>
             <div class="form-group">
                 <h5>基本資料</h5>
                 姓名 : <input type="text" class="form-control" placeholder="請輸入姓名" name="name">
@@ -46,7 +45,7 @@
             </div>
             <button type="button" id="submit" class="btn btn-primary btn-sm">加入</button>
         </form>
-        <div>
+        <div class="padding">
             已經是會員了嗎?
             <a href="../login">立即登入</a>
         </div>
