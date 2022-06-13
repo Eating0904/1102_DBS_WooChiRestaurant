@@ -27,8 +27,8 @@ require("../php/User.php");
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../home">
-            <img src="../logo.png" width="30" height="30" alt="Image">
-            WooChi
+            <img src="../static/img/icon/logo.png" width="30" height="30" alt="Image">
+            <label>WooChi</label>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -96,8 +96,14 @@ require("../php/User.php");
         </div>
     </nav>
 
+    <div class="center padding">
+        <h4>
+            <img src="../static/img/icon/pets.png" alt="img" width="40px">
+            店內寵物資訊
+            <img src="../static/img/icon/pets.png" alt="img" width="40px">
+        </h4>
+    </div>
     <div class="container">
-        <h3>店內寵物資訊</h3>
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">狗狗 Dogs</a>

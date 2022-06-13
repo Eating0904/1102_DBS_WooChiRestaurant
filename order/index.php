@@ -51,8 +51,8 @@ if (!user::check()) {
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../home">
-            <img src="../logo.png" width="30" height="30" alt="Image">
-            WooChi
+            <img src="../static/img/icon/logo.png" width="30" height="30" alt="Image">
+            <label>WooChi</label>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -122,17 +122,17 @@ if (!user::check()) {
 
     <div class="container">
         <div>
-            <h5>聯絡資料</h5>
+            <h4>聯絡資料</h4>
             <div id="member">
                 <small class="text-muted" name="name">姓名 : </small><br>
                 <small class="text-muted" name="tel">連絡電話 : </small><br>
                 <small class="text-muted" name="mail">聯絡信箱 : </small><br>
-                <small class="text-muted"> *若要更改，請至「會員」 -> 「會員資料」 修改 </small>
+                <small class="text-muted"> * 若要更改，請至「會員」 -> 「會員資料」 修改 </small>
             </div>
         </div>
         <form>
             <div class="center">
-                <h5>訂位資訊</h5>
+                <h4>訂位資訊</h4>
                 <form>
                     <div class="form-group col-md-3">
                         <label for="start_date">日期</label>

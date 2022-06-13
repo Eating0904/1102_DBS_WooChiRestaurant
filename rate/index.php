@@ -32,8 +32,8 @@ require("../php/User.php");
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../home">
-            <img src="../logo.png" width="30" height="30" alt="Image">
-            WooChi
+            <img src="../static/img/icon/logo.png" width="30" height="30" alt="Image">
+            <label>WooChi</label>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -100,9 +100,14 @@ require("../php/User.php");
             </ul>
         </div>
     </nav>
-
+    <div class="center padding">
+        <h4>
+            <img src="../static/img/icon/rate.png" alt="img" width="35px">
+            關於評價
+            <img src="../static/img/icon/rate.png" alt="img" width="35px">
+        </h4>
+    </div>
     <div class="container">
-        <h3>關於評價</h3>
         <!-- if已登入 -->
             <?php if(User::check()): ?>
                 <!-- if是會員 -->

@@ -28,8 +28,8 @@ require("../php/User.php");
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../home">
-            <img src="../logo.png" width="30" height="30" alt="Image">
-            WooChi
+            <img src="../static/img/icon/logo.png" width="30" height="30" alt="Image">
+            <label>WooChi</label>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -96,9 +96,14 @@ require("../php/User.php");
             </ul>
         </div>
     </nav>
-    
+    <div class="center padding">
+        <h4>
+            <img src="../static/img/icon/menu.png" alt="img" width="40px">
+            守則 & 菜單
+            <img src="../static/img/icon/menu.png" alt="img" width="40px">
+        </h4>
+    </div>
     <div class="container center">
-        <h4>餐廳守則 & 菜單</h4>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

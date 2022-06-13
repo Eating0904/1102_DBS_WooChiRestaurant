@@ -30,8 +30,8 @@ require("../php/User.php");
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../home">
-            <img src="../logo.png" width="30" height="30" alt="Image">
-            WooChi
+            <img src="../static/img/icon/logo.png" width="30" height="30" alt="Image">
+            <label>WooChi</label>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

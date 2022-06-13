@@ -42,6 +42,17 @@ html, body{
     display: block;
     text-align: center;
 }
+h4 ,h3{
+    font-weight: 650;
+}
+label{
+    padding-top: 5%;
+    font-weight: 500;
+;
+}
+.navbar{
+    align-items: start;
+}
 /* .center {
     display: inline-block !important;
     text-align: center !important;

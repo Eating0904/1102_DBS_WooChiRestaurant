@@ -30,8 +30,8 @@ if (!user::check()) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../home">
-            <img src="../logo.png" width="30" height="30" alt="Image">
-            WooChi
+            <img src="../static/img/icon/logo.png" width="30" height="30" alt="Image">
+            <label>WooChi</label>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -112,9 +112,13 @@ if (!user::check()) {
             <!-- 查詢會員資料 -->
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                 <div class="form-group center">
-                    <h4>查詢會員資料</h4>
+                    <h4>
+                        <img src="../static/img/icon/search_member.png" alt="img" width="40px">
+                        查詢會員資料
+                    </h4>
                     <input type="text" class="form-control" placeholder="會員ID、會員姓名..." name="searchMember">
                     <button type="button"class="btn btn-primary btn-sm" onclick="searchMember()">查詢</button>
+                    
                 </div>
                 <!-- 如果點了查詢才出現 -->
                 <div id="member">
@@ -127,7 +131,10 @@ if (!user::check()) {
             <!-- 查詢訂單紀錄 -->
             <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                 <div class="form-group center">
-                    <h4>查詢訂單紀錄</h4>
+                    <h4>
+                        <img src="../static/img/icon/search_order.png" alt="Img" width="50px">
+                        查詢訂單紀錄
+                    </h4>
                     <input type="text" class="form-control" placeholder="訂單ID、姓名、日期..." name="searchOrder">
                     <button type="button"class="btn btn-primary btn-sm" onclick="searchOrder()">查詢</button>
                 </div>

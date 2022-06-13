@@ -20,8 +20,8 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="../home">
-            <img src="../logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            WooChi
+            <img src="../static/img/icon/logo.png" width="30" height="30" alt="Image">
+            <label>WooChi</label>
         </a>
     </nav>
 

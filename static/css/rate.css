@@ -78,3 +78,9 @@ label.star:before {
     
     padding: auto !important;
 }
+.padding{
+    padding-top: 2%;
+}
+.center{
+    text-align: center;
+}
